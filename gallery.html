@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the culinary art of TASTNEST - our exquisite Indian, Pakistani and international food creations">
+    <meta name="keywords" content="Indian food, Pakistani food, desi cuisine, food gallery, restaurant photos">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <meta property="og:title" content="TASTNEST Food Gallery - Desi & International Cuisine">
+    <meta property="og:description" content="Discover the flavors of India and Pakistan through our gallery of authentic dishes">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tastnest.com/gallery">
+    <title>TASTNEST Food Gallery | Indian & Pakistani Cuisine | Fine Dining</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" as="font" crossorigin>
+    
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+                body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) ;
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9) ;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613 ;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a ;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #e30613 ;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .dropdown-item:hover {
+            background-color: #e30613;
+            color: white ;
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Gallery Hero Section */
+        .gallery-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./image/web\ site\ 4.jpeg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .gallery-hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        
+        .gallery-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #e30613;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Gallery Categories */
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-category {
+            padding: 8px 20px;
+            background-color: #f5f5f5;
+            border-radius: 50px;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .gallery-category:hover, .gallery-category.active {
+            background-color: #e30613;
+            color: white;
+        }
+        
+        /* Food Detail Modal */
+        .food-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .food-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .food-modal-content {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .food-modal.active .food-modal-content {
+            transform: scale(1);
+        }
+        
+        .food-modal-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .food-modal-body {
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .food-modal-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .food-modal-price {
+            font-size: 1.5rem;
+            color: #e30613;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .food-modal-description {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .food-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #e30613;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 1;
+        }
+        
+        .food-modal-close:hover {
+            background-color: #1a1a1a;
+            transform: rotate(90deg);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .footer-logo span {
+            color: #e30613;
+        }
+
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #e30613;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 991px) {
+            .footer {
+                padding: 80px 0 30px;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .food-modal-img {
+                height: 250px;
+            }
+            
+            .food-modal-body {
+                padding: 20px;
+            }
+            
+            .food-modal-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .gallery-hero {
+                height: 60vh;
+                min-height: 500px;
+            }
+            
+            .gallery-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .food-modal-content {
+                flex-direction: row;
+            }
+            
+            .food-modal-img {
+                width: 50%;
+                height: auto;
+            }
+            
+            .food-modal-body {
+                width: 50%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .gallery-hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="gallery-hero-content">
+                        <h1 data-aos="fade-up">Our Desi Cuisine Gallery</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Experience the authentic flavors of India and Pakistan with our exquisite dishes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Food Gallery</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">A visual journey through our authentic Indian and Pakistani cuisine</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-categories">
+                <div class="gallery-category active" data-category="all">All Dishes</div>
+                <div class="gallery-category" data-category="starters">Starters</div>
+                <div class="gallery-category" data-category="mains">Main Courses</div>
+                <div class="gallery-category" data-category="breads">Breads</div>
+                <div class="gallery-category" data-category="desserts">Desserts</div>
+                <div class="gallery-category" data-category="international">International</div>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Starters -->
+                <div class="gallery-item" data-category="starters" data-aos="fade-up">
+                    <img src="./image/samosa 1.jpeg" alt="Samosas" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Vegetable Samosas</h5>
+                        <p>Crispy pastry with spiced potatoes</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Vegetable Samosas</h3>
+                        <p class="price">$8</p>
+                        <p class="description">Golden-fried pastry cones filled with spiced potatoes, peas, and herbs, served with tamarind and mint chutneys.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="starters" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Pakora 2.jpeg" alt="Pakoras" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Mixed Vegetable Pakoras</h5>
+                        <p>Chickpea flour battered fritters</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Mixed Vegetable Pakoras</h3>
+                        <p class="price">$9</p>
+                        <p class="description">Seasonal vegetables dipped in spiced chickpea flour batter and deep-fried to crispy perfection.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="starters" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Tandoori chicken 3.jpeg" alt="Tandoori Chicken" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Tandoori Chicken</h5>
+                        <p>Classic clay oven roasted chicken</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Tandoori Chicken</h3>
+                        <p class="price">$14</p>
+                        <p class="description">Chicken marinated in yogurt and spices, cooked in traditional clay oven (tandoor) for authentic smoky flavor.</p>
+                    </div>
+                </div>
+                
+                <!-- Main Courses -->
+                <div class="gallery-item" data-category="mains" data-aos="fade-up">
+                    <img src="./image/butter chiken 4.jpeg" alt="Butter Chicken" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Butter Chicken</h5>
+                        <p>Mughlai style creamy curry</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Butter Chicken</h3>
+                        <p class="price">$18</p>
+                        <p class="description">Tender chicken pieces in rich tomato and butter sauce with aromatic spices, a North Indian classic.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="mains" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Biryani Chicken Rice 5.jpeg" alt="Hyderabadi Biryani" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Hyderabadi Dum Biryani</h5>
+                        <p>Fragrant layered rice dish</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Hyderabadi Dum Biryani</h3>
+                        <p class="price">$22</p>
+                        <p class="description">Basmati rice layered with marinated meat, saffron, and spices, slow-cooked in sealed pot (dum style).</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="mains" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Nihari 6.jpeg" alt="Nihari" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Beef Nihari</h5>
+                        <p>Slow-cooked Pakistani stew</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Beef Nihari</h3>
+                        <p class="price">$20</p>
+                        <p class="description">Traditional slow-cooked beef shank stew with bone marrow, flavored with special Nihari masala.</p>
+                    </div>
+                </div>
+                
+                <!-- Breads -->
+                <div class="gallery-item" data-category="breads" data-aos="fade-up">
+                    <img src="./image/garlic naan 8.jpeg" alt="Garlic Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Garlic Naan</h5>
+                        <p>Tandoor-baked leavened bread</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Garlic Naan</h3>
+                        <p class="price">$4</p>
+                        <p class="description">Soft leavened bread baked in tandoor with fresh garlic and cilantro toppings.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="breads" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Romali Rotti 9.jpeg" alt="Rumali Roti" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Rumali Roti</h5>
+                        <p>Thin 'handkerchief' bread</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Rumali Roti</h3>
+                        <p class="price">$3.50</p>
+                        <p class="description">Paper-thin bread cooked on inverted griddle, a specialty of Awadhi cuisine.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="breads" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Aloo Paratha 10.jpeg" alt="Aloo Paratha" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Aloo Paratha</h5>
+                        <p>Stuffed potato flatbread</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Aloo Paratha</h3>
+                        <p class="price">$6</p>
+                        <p class="description">Whole wheat flatbread stuffed with spiced mashed potatoes, cooked on griddle with ghee.</p>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="gallery-item" data-category="desserts" data-aos="fade-up">
+                    <img src="./image/Rosogolla 11.jpeg" alt="Gulab Jamun" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Gulab Jamun</h5>
+                        <p>Milk solids in sugar syrup</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Gulab Jamun</h3>
+                        <p class="price">$8</p>
+                        <p class="description">Soft milk-solid dumplings soaked in rose-flavored sugar syrup, served warm.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="desserts" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Kheer 12.jpeg" alt="Rice Kheer" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Rice Kheer</h5>
+                        <p>Traditional rice pudding</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Rice Kheer</h3>
+                        <p class="price">$7</p>
+                        <p class="description">Slow-cooked rice pudding with milk, cardamom, nuts and saffron.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="desserts" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Rasmalai 13.jpeg" alt="Rasmalai" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Rasmalai</h5>
+                        <p>Cottage cheese in sweet milk</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Rasmalai</h3>
+                        <p class="price">$9</p>
+                        <p class="description">Soft paneer dumplings in thickened, sweetened milk flavored with cardamom and saffron.</p>
+                    </div>
+                </div>
+                
+                <!-- International -->
+                <div class="gallery-item" data-category="international" data-aos="fade-up">
+                    <img src="./image/Creamy  Alfredo 14.jpeg" alt="Pasta" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Creamy Alfredo Pasta</h5>
+                        <p>Italian classic with our twist</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Creamy Alfredo Pasta</h3>
+                        <p class="price">$16</p>
+                        <p class="description">Fettuccine pasta in rich Parmesan cream sauce with garlic and herbs.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="international" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Grilled Ribeye 15" alt="Steak" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Grilled Ribeye Steak</h5>
+                        <p>With desi masala rub</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Grilled Ribeye Steak</h3>
+                        <p class="price">$28</p>
+                        <p class="description">Premium ribeye steak with our special Indian spice rub, served with roasted vegetables.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="international" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Sushi Feast 16.jpeg" alt="Sushi" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Sushi Platter</h5>
+                        <p>Japanese delicacies</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Sushi Platter</h3>
+                        <p class="price">$22</p>
+                        <p class="description">Assorted nigiri and maki rolls with wasabi, pickled ginger and soy sauce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Detail Modal -->
+    <div class="food-modal">
+        <div class="food-modal-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="food-modal-content">
+            <img src="" alt="" class="food-modal-img">
+            <div class="food-modal-body">
+                <h2 class="food-modal-title"></h2>
+                <div class="food-modal-price"></div>
+                <p class="food-modal-description"></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST brings you authentic Indian and Pakistani flavors with a modern twist, offering a memorable dining experience.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Spice Avenue<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe for updates on our seasonal menus, special events, and exclusive offers.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Gallery Filtering
+        document.querySelectorAll('.gallery-category').forEach(category => {
+            category.addEventListener('click', function() {
+                // Update active category
+                document.querySelectorAll('.gallery-category').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                
+                const categoryFilter = this.getAttribute('data-category');
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                galleryItems.forEach(item => {
+                    if (categoryFilter === 'all' || item.getAttribute('data-category') === categoryFilter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Food Modal
+        const foodModal = document.querySelector('.food-modal');
+        const modalClose = document.querySelector('.food-modal-close');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').getAttribute('src');
+                const imgAlt = this.querySelector('img').getAttribute('alt');
+                const details = this.querySelector('.food-details');
+                
+                foodModal.querySelector('.food-modal-img').setAttribute('src', imgSrc);
+                foodModal.querySelector('.food-modal-img').setAttribute('alt', imgAlt);
+                foodModal.querySelector('.food-modal-title').textContent = details.querySelector('h3').textContent;
+                foodModal.querySelector('.food-modal-price').textContent = details.querySelector('.price').textContent;
+                foodModal.querySelector('.food-modal-description').textContent = details.querySelector('.description').textContent;
+                
+                foodModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        modalClose.addEventListener('click', function() {
+            foodModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside content
+        foodModal.addEventListener('click', function(e) {
+            if (e.target === foodModal) {
+                foodModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Back to Top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

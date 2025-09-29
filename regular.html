@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASTNEST - Premium fine dining restaurant offering exquisite culinary experiences with Michelin-starred chefs and world-class ambiance">
+    <meta name="keywords" content="fine dining, restaurant, gourmet food, Michelin-star, TASTNEST, premium cuisine">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <meta property="og:title" content="TASTNEST - Premium Dining Experience">
+    <meta property="og:description" content="Experience world-class cuisine at TASTNEST, where culinary art meets exceptional service">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tastnest.com">
+    <title>TASTNEST | Premium Fine Dining Restaurant | Michelin-Star Experience</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" as="font" crossorigin>
+    
+    <!-- Bootstrap CSS -->
+     <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9) ;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a ;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #e30613 ;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .dropdown-item:hover {
+            background-color: #e30613;
+            color: white ;
+        }
+        /* Dropdown menu improved style */
+    .navbar-nav .dropdown-menu {
+        min-width: 180px;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        border: none;
+        margin-top: 10px;
+        background: #fff;
+        padding: 0.5rem 0;
+        transition: all 0.3s;
+    }
+    .navbar-nav .dropdown-item {
+        padding: 10px 24px;
+        color: #1a1a1a;
+        font-weight: 500;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+        background: #e30613;
+        color: #fff;
+    }
+    .navbar-nav .dropdown-menu.show {
+        display: block;
+        animation: fadeInDown 0.25s;
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-10px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+    /* On mobile, make dropdown full width */
+    @media (max-width: 991px) {
+        .navbar-nav .dropdown-menu {
+            min-width: 100%;
+            left: 0 !important;
+            right: 0 !important;
+            box-shadow: none;
+            border-radius: 0 0 10px 10px;
+        }
+        .navbar-nav .dropdown-item {
+            padding: 12px 24px;
+        }
+    }
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+        }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #e30613;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Platter Cards */
+        .platter-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            border-bottom: 4px solid #e30613;
+            margin-bottom: 30px;
+        }
+        .platter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .platter-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .platter-card:hover img {
+            transform: scale(1.05);
+        }
+        .platter-card h4 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+            color: #1a1a1a;
+        }
+        .platter-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .price {
+            font-weight: bold;
+            color: #e30613;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .platter-card-body {
+            padding: 20px;
+        }
+        /* Deals Section */
+        .deals-section {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+        }
+        .deal-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            position: relative;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .deal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .deal-card .ribbon {
+            position: absolute;
+            top: 10px;
+            right: -10px;
+            background-color: #d4af37;
+            color: #1a1a1a;
+            padding: 5px 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .deal-card .ribbon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #d4af37;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid #d4af37;
+            z-index: -1;
+        }
+        .deal-card-body {
+            padding: 25px;
+        }
+        .deal-card h3 {
+            color: #e30613;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .deal-card .deal-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 15px 0;
+        }
+        .deal-card .deal-price span {
+            font-size: 1.2rem;
+            color: #777;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .deal-card .btn {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .deal-card .btn:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+        /* Meal Sections Styling */
+        .product-category {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+        .product-category h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .product-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .product-card h4 {
+            color: #333;
+            font-weight: 600;
+            margin: 15px 15px 5px;
+        }
+        .product-card p {
+            color: #666;
+            font-size: 14px;
+            margin: 0 15px 10px;
+            flex-grow: 1;
+        }
+        .price {
+            color: #ff6b6b;
+            font-size: 18px;
+            font-weight: 700;
+            display: block;
+            margin: 0 15px 15px;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .product-card {
+                margin-bottom: 20px;
+            }
+        }
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        .footer-logo span {
+            color: #e30613;
+        }
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
+        }
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+        @media (max-width: 991px) {
+            .footer {
+                padding: 80px 0 30px;
+            }
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+        @media (max-width: 575px) {
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Meal Sections -->
+    <div id="regular" class="product-category">
+        <h2 class="text-center">Regular Meals</h2>
+        <div class="row" id="regular-meals-container">
+            <!-- Regular meals will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Platter Section -->
+    <section id="platters" class="py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Signature Platters</h2>
+                <p class="lead">Perfectly curated combinations for a complete dining experience</p>
+            </div>
+            <div class="row" id="platters-container">
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section id="deals" class="deals-section py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Special Offers</h2>
+                <p class="lead">Exclusive deals for our valued customers</p>
+            </div>
+            <div class="row" id="deals-container">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST is a world-renowned fine dining establishment dedicated to culinary excellence, innovative techniques, and unforgettable dining experiences.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Gourmet Avenue<br>New York</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for exclusive updates, special events, and seasonal menu announcements.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu close on click
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => { bsCollapse.hide(); })
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                // Here you would typically send the email to your server
+                alert('Thank you for subscribing with ' + email);
+                this.reset();
+            });
+        }
+        
+        // Load data from JSON
+        fetch("./data.json")
+            .then(response => response.json())
+            .then(data => {
+                // Render regular meals
+                const regularMealsContainer = document.getElementById('regular-meals-container');
+                data.regularMeals.forEach(meal => {
+                    regularMealsContainer.innerHTML += `
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                            <div class="product-card">
+                                <img src="${meal.image}" style="height: 250px;" class="img-fluid" alt="${meal.name}">
+                                <h4>${meal.name}</h4>
+                                <p>${meal.description}</p>
+                                <p><strong class="price">${meal.price}</strong></p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Render platters
+                const plattersContainer = document.getElementById('platters-container');
+                data.signaturePlatters.forEach(platter => {
+                    plattersContainer.innerHTML += `
+                        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="platter-card">
+                                <img src="${platter.image}" class="img-fluid" alt="${platter.name}">
+                                <div class="platter-card-body">
+                                    <h4>${platter.name}</h4>
+                                    <p>${platter.description}</p>
+                                    <p><strong class="price">${platter.price}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Render deals
+                const dealsContainer = document.getElementById('deals-container');
+                data.specialOffers.forEach(deal => {
+                    dealsContainer.innerHTML += `
+                        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="deal-card">
+                                <div class="ribbon">Special Offer</div>
+                                <div class="deal-card-body">
+                                    <h3>${deal.name}</h3>
+                                    <p>${deal.description}</p>
+                                    <p class="deal-price">${deal.price} <span>${deal.originalPrice}</span></p>
+                                    <button class="btn">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            })
+ 
+    </script>
+</body>
+</html>

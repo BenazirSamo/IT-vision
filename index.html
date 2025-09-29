@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASTNEST - Premium fine dining restaurant offering exquisite culinary experiences with Michelin-starred chefs and world-class ambiance">
+    <meta name="keywords" content="fine dining, restaurant, gourmet food, Michelin-star, TASTNEST, premium cuisine">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <meta property="og:title" content="TASTNEST - Premium Dining Experience">
+    <meta property="og:description" content="Experience world-class cuisine at TASTNEST, where culinary art meets exceptional service">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tastnest.com">
+    <title>TASTNEST | Premium Fine Dining Restaurant</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" as="font" crossorigin>
+    
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+         /* Navigation  */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) ;
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9) ;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613 ;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            color: #1a1a1a ;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: #e30613;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .dropdown-item:hover {
+            background-color: #e30613;
+            color: white ;
+        }
+        
+        /* Hero Slider */
+        .hero-slider {
+            margin-top: 95px;
+        }
+        
+        .carousel-item {
+            height: 100vh;
+            min-height: 70px;
+            position: relative;
+            
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .carousel-caption {
+            bottom: 30%;
+            text-align: left;
+            padding: 0 8%;
+            z-index: 2;
+        }
+        
+        .carousel-caption h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation-delay: 0.3s;
+        }
+        
+        .carousel-caption p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 600px;
+            animation-delay: 0.6s;
+        }
+        
+        .btn-reddot {
+            background-color: #13090a;
+            color: white;
+            border-radius: 50px;
+            padding: 14px 35px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-reddot:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(227, 6, 19, 0.4);
+        }
+        
+        .btn-reddot:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #1a1a1a;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+        
+        .btn-reddot:hover:before {
+            width: 100%;
+        }
+        
+        .btn-outline-reddot {
+            border: 2px solid white;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background-color: transparent;
+        }
+        
+        .btn-outline-reddot:hover {
+            background-color: white;
+            color: #e30613;
+            border-color: white;
+        }
+        
+        /* Premium Features */
+        .premium-features {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #e30613;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-bottom: 4px solid #e30613;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #e30613;
+            margin-bottom: 25px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Signature Dish */
+        .signature-dish {
+            padding: 120px 0;
+            background-color: #1a1a1a;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .signature-dish h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .signature-dish h3 {
+            color: #d4af37;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .signature-dish p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .signature-dish img {
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .signature-dish img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: #f5f5f5;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:before {
+           
+            position: absolute;
+            font-size: 6rem;
+            color: rgba(227, 6, 19, 0.05);
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .rating {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .guest-info {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .guest-info h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-left: 4px solid #e30613;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 25px;
+            border: 3px solid #f5f5f5;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .price {
+            margin-left: auto;
+            font-weight: bold;
+            color: #e30613;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /*  Map Section */
+        .map-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #e6e6e6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .circular-map {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+        
+        .center-logo {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .center-logo:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        
+        .center-logo h2 {
+            color: #e30613;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .map-item {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+        }
+        
+        .map-item:hover {
+            transform: scale(1.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+        }
+        
+        .map-item i {
+            font-size: 2.5rem;
+            color: #e30613;
+            margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .map-item:hover i {
+            transform: scale(1.2);
+        }
+        
+        .map-item span {
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .map-item:hover span {
+            color: #e30613;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .footer-logo span {
+            color: #e30613;
+        }
+        
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+        
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #e30613;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        [data-aos="fade-up"] {
+            transform: translateY(50px);
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+        
+        [data-aos="fade-up"].aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .carousel-caption h1 {
+                font-size: 3.5rem;
+            }
+            
+            .circular-map {
+                max-width: 700px;
+            }
+            
+            .map-item {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 3rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-list {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .footer {
+                padding: 80px 0 30px;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .carousel-item {
+                height: 80vh;
+                min-height: 600px;
+            }
+            
+            .carousel-caption {
+                bottom: 20%;
+                padding: 0 5%;
+                text-align: center;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .carousel-caption p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-reddot, .btn-outline-reddot {
+                padding: 12px 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .feature-card, .testimonial-card {
+                padding: 30px 20px;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .menu-item img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .price {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .circular-map {
+                max-width: 500px;
+            }
+            
+            .map-item {
+                width: 100px;
+                height: 100px;
+                font-size: 0.9rem;
+            }
+            
+            .center-logo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-item {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .circular-map {
+                max-width: 350px;
+            }
+            
+            .map-item {
+                width: 80px;
+                height: 80px;
+                font-size: 0.8rem;
+                padding: 15px;
+            }
+            
+            .map-item i {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .center-logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .center-logo h2 {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+        }
+        /* Section Styling */
+    .site-map-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #1a1a1a;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: #e30613;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        letter-spacing: 1px;
+    }
+    
+    /* Site Map Navigation */
+    .site-map-nav {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .site-map-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    
+    .site-map-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0 5px;
+    }
+    
+    .site-map-link {
+        display: inline-block;
+        padding: 12px 20px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .site-map-link:hover {
+        color: #e30613;
+        transform: translateY(-2px);
+    }
+    
+    .site-map-link:hover .link-text {
+        transform: translateX(5px);
+    }
+    
+    .link-text {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+    
+    .link-arrow {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+    }
+    
+    .site-map-item:hover .link-arrow {
+        opacity: 1;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .site-map-links {
+            justify-content: flex-start;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .site-map-item {
+            width: 100%;
+            margin: 5px 0;
+            justify-content: center;
+        }
+        
+        .link-arrow {
+            display: none;
+        }
+        
+        .site-map-link {
+            width: 100%;
+            text-align: center;
+            padding: 15px 20px;
+            background: #f8f8f8;
+        }
+        
+        .site-map-link:hover {
+            background: #f0f0f0;
+        }
+    }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Slider Section -->
+    <div id="homepageCarousel" class="carousel slide hero-slider" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src=".//image/for home 1.jpeg" class="d-block w-100" alt="TASTNEST Gourmet Dining Experience">
+                <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Welcome to TASTNEST</h1>
+                    <p data-aos="fade-up" data-aos-delay="200">Where culinary artistry meets exceptional dining experiences</p>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="contact.html" class="btn btn-reddot mt-3">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="./image/for home 5.png" class="d-block w-100" alt="TASTNEST Seasonal Ingredients">
+                <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Seasonal Ingredients</h1>
+                    <p data-aos="fade-up" data-aos-delay="200">Sourced daily from local farms and international markets</p>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="about.html" class="btn btn-outline-reddot mt-3">Our Philosophy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="./image/for home 2.jpeg"  class="d-block w-100" alt="TASTNEST Luxury Ambience">
+                <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Luxury Redefined</h1>
+                    <p data-aos="fade-up" data-aos-delay="200">Experience dining in our award-winning restaurant</p>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="gallery.html" class="btn btn-reddot mt-3">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    <!-- Premium Features Section -->
+    <section class="premium-features">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">The TASTNEST Experience</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Discover what makes our restaurant truly exceptional and why we've earned our Michelin stars</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Michelin-Starred Cuisine</h3>
+                        <p>Our award-winning chefs craft each dish with precision and passion, using only the finest ingredients sourced from trusted local producers and international markets.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <h3>Curated Wine Cellar</h3>
+                        <p>With over 1,200 selections, our master sommelier will guide you to the perfect pairing from our extensive collection of international and rare vintages.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Luxurious Ambiance</h3>
+                        <p>Designed by renowned architects, our dining spaces feature custom furnishings, designer lighting, and impeccable attention to every aesthetic detail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Signature Dish Section -->
+    <section class="signature-dish">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <img src="./image/download (2).jpeg" alt="Chef's Signature Dish" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Chef's Signature Creation</h2>
+                    <h3 class="mb-3">Truffle-Infused Wagyu Beef</h3>
+                    <p class="lead">Our most celebrated dish features A5 Japanese Wagyu beef, aged for 28 days and slow-cooked to perfection, infused with black truffle essence from Piedmont, served with seasonal vegetables and our signature reduction sauce.</p>
+                    <p>This masterpiece is available as part of our tasting menu or à la carte. Each serving is accompanied by a sommelier-selected wine pairing to enhance the flavors.</p>
+                    <a href="#" class="btn btn-reddot mt-3">Explore All Signature Dishes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guest Experience -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Guest Experiences</h2>
+                         <p data-aos="fade-up" data-aos-delay="200">What our esteemed guests say about their unforgettable dining experiences at TASTNEST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The tasting menu was an absolute revelation. Each course was a masterpiece, with flavors that danced on the palate. The wine pairings were inspired and the service impeccable."</p>
+                        <div class="guest-info">
+                            <h5>Sarah Johnson</h5>
+                            <p>Food Critic, Gourmet Magazine</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Celebrated our anniversary here and it was magical. The sommelier's recommendation was perfect, and the chef prepared a special dessert that made the evening unforgettable."</p>
+                        <div class="guest-info">
+                            <h5>Michael Emily Chen</h5>
+                            <p>Regular Guests Since 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a Michelin inspector, I've dined at countless establishments. TASTNEST stands out for its perfect harmony of innovation and tradition. Worthy of every star it's received."</p>
+                        <div class="guest-info">
+                            <h5>Antoine Dubois</h5>
+                            <p>Michelin Guide Inspector</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+<section class="menu-section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2 data-aos="fade-up">Menu Highlights</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Discover our chef’s finest creations, blending tradition with a modern twist</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu-list">
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="0">
+                <img src="./image/Royal Butter Chicken.jpeg" alt="Royal Butter Chicken">
+                <div>
+                    <h4>Royal Butter Chicken</h4>
+                    <p>Creamy tomato gravy with tender chicken, served with naan</p>
+                    <div class="price">$25</div>
+                </div>
+            </div>
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="./image/Grilled Prawn Platter.jpeg" alt="Grilled Prawn Platter">
+                <div>
+                    <h4>Grilled Prawn Platter</h4>
+                    <p>Fresh jumbo prawns marinated in herbs & spices</p>
+                    <div class="price">$38</div>
+                </div>
+            </div>
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="./image/Mushroom Alfredo Pasta.jpeg" alt="Mushroom Alfredo Pasta">
+                <div>
+                    <h4>Mushroom Alfredo Pasta</h4>
+                    <p>Fettuccine tossed in creamy Alfredo sauce with wild mushrooms</p>
+                    <div class="price">$22</div>
+                </div>
+            </div>
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="0">
+                <img src="./image/Herb-Crusted Lamb Chops.jpeg" alt="Herb-Crusted Lamb Chops">
+                <div>
+                    <h4>Herb-Crusted Lamb Chops</h4>
+                    <p>Served with garlic mashed potatoes & rosemary jus</p>
+                    <div class="price">$42</div>
+                </div>
+            </div>
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="./image/Molten Chocolate Lava Cake.jpeg" alt="Molten Chocolate Lava Cake">
+                <div>
+                    <h4>Molten Chocolate Lava Cake</h4>
+                    <p>Rich molten center with a scoop of vanilla ice cream</p>
+                    <div class="price">$15</div>
+                </div>
+            </div>
+           <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="image/Tropical Fruit Platter.jpeg" alt="Tropical Fruit Platter">
+                <div>
+                    <h4>Tropical Fruit Platter</h4>
+                    <p>A vibrant mix of seasonal fresh fruits with a honey-lime drizzle</p>
+                    <div class="price">$18</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="gallery.html" class="btn btn-reddot">View Full Menu</a>
+        </div>
+    </div>
+</section>
+
+ <!-- Enhanced Site Map Section -->
+<section class="site-map-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title mb-3">SITE MAP</h2>
+                <p class="section-subtitle">Explore Our Website</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="site-map-nav">
+                    <nav aria-label="Site navigation map">
+                        <ul class="site-map-links">
+                            <li class="site-map-item">
+                                <a href="./index.html" class="site-map-link">
+                                    <span class="link-text">Home</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./about.html" class="site-map-link">
+                                    <span class="link-text">About Us</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./gallery.html" class="site-map-link">
+                                    <span class="link-text">Gallery</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./regular.html" class="site-map-link">
+                                    <span class="link-text">Meals</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./Recipe-of-the-month.html" class="site-map-link">
+                                    <span class="link-text">Recipe</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./feedback.html" class="site-map-link">
+                                    <span class="link-text">Feedback</span>
+                                </a>
+                                <span class="link-arrow"></span>
+                            </li>
+                            <li class="site-map-item">
+                                <a href="./contact.html" class="site-map-link">
+                                    <span class="link-text">Contact Us</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST is a world-renowned fine dining establishment dedicated to culinary excellence, innovative techniques, and unforgettable dining experiences.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Gourmet Avenue<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for exclusive updates, special events, and seasonal menu announcements.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ 
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => { bsCollapse.hide(); })
+        });
+    </script>
+</body>
+</html>

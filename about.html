@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the story behind TASTNEST - our culinary philosophy, Michelin-starred chefs, and commitment to exceptional dining experiences">
+    <meta name="keywords" content="about TASTNEST, restaurant history, culinary team, fine dining philosophy">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <meta property="og:title" content="About TASTNEST - Our Culinary Journey">
+    <meta property="og:description" content="Learn about our passion for culinary excellence and the team behind TASTNEST's Michelin-starred dining experience">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tastnest.com/about">
+    <title>About TASTNEST | Our Story & Culinary Philosophy | Michelin-Star Restaurant</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" as="font" crossorigin>
+    
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) ;
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a ;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #e30613;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        /* Dropdown menu improved style */
+        .navbar-nav .dropdown-menu {
+            min-width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: none;
+            margin-top: 10px;
+            background: #fff;
+            padding: 0.5rem 0;
+            transition: all 0.3s;
+        }
+        .navbar-nav .dropdown-item {
+            padding: 10px 24px;
+            color: #1a1a1a;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar-nav .dropdown-item:hover,
+        .navbar-nav .dropdown-item:focus {
+            background: #e30613;
+            color: #fff;
+        }
+        .navbar-nav .dropdown-menu.show {
+            display: block;
+            animation: fadeInDown 0.25s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @media (max-width: 991px) {
+            .navbar-nav .dropdown-menu {
+                min-width: 100%;
+                left: 0 !important;
+                right: 0 !important;
+                box-shadow: none;
+                border-radius: 0 0 10px 10px;
+            }
+            .navbar-nav .dropdown-item {
+                padding: 12px 24px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .about-hero {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./image/web site 1.jpeg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #e30613;
+        }
+        
+        .breadcrumb-item.active {
+            color: white;
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Our Story Section */
+        .our-story {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .story-img-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-img {
+            width: 100%;
+            height: auto;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .story-img-container:hover .story-img {
+            transform: scale(1.03);
+        }
+        
+        .year-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #e30613;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        
+        .story-content h2 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .story-content h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .story-content p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #e30613;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Milestones Section */
+        .milestones {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .milestone-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border-bottom: 3px solid #e30613;
+        }
+        
+        .milestone-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-year {
+            font-size: 2rem;
+            color: #e30613;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .milestone-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        
+        /* Chef Team Section */
+        .chef-team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .chef-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 25px;
+        }
+        
+        .chef-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chef-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .chef-info {
+            padding: 20px;
+        }
+        
+        .chef-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .chef-title {
+            color: #e30613;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 0.9rem;
+        }
+        
+        .chef-social {
+            margin-top: 15px;
+        }
+        
+        .chef-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            margin-right: 8px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 0.9rem;
+        }
+        
+        .chef-social a:hover {
+            background-color: #e30613;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Philosophy Section */
+        .philosophy {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./image/hero2.jpg') fixed;
+            background-size: cover;
+            color: white;
+            position: relative;
+        }
+        
+        .philosophy-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 30px 20px;
+            height: 100%;
+            border-left: 3px solid #e30613;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 20px;
+        }
+        
+        .philosophy-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .philosophy-icon {
+            font-size: 2.5rem;
+            color: #e30613;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-about {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            font-size: 4rem;
+            color: rgba(227, 6, 19, 0.05);
+            top: 10px;
+            left: 15px;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .rating {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .guest-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Reservation Banner */
+        .reservation-banner {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #e30613 0%, #c00512 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .reservation-banner h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #e30613;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+        
+        /* Section Title */
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #e30613;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @media (min-width: 768px) {
+            .about-hero {
+                height: 70vh;
+                min-height: 600px;
+                margin-top: 80px;
+            }
+            
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .story-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .year-badge {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5rem;
+            }
+            
+            .milestone-year {
+                font-size: 2.5rem;
+            }
+            
+            .chef-img {
+                height: 350px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .about-hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .reservation-banner h2 {
+                font-size: 2.5rem;
+            }
+        }
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .footer-logo span {
+            color: #e30613;
+        }
+
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+
+        @media (max-width: 991px) {
+            .footer {
+                padding: 80px 0 30px;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="about-hero-content">
+                        <nav aria-label="breadcrumb"></nav>
+                        <h1 data-aos="fade-up">Our Culinary Journey</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Discover the passion, dedication, and artistry behind TASTNEST's Michelin-starred dining experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="story-img-container">
+                        <img src="./image/download (6).jpeg" alt="TASTNEST Founders" class="story-img">
+                        <div class="year-badge">2010</div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-content">
+                        <h2>Our Humble Beginnings</h2>
+                        <p>What began as a small 30-seat bistro in 2010 has blossomed into one of the world's most celebrated dining destinations. Founded by Chef Marco Vincenzo and restaurateur Elena Petrov, TASTNEST was born from a shared vision to create a culinary sanctuary where innovation meets tradition.</p>
+                        <p>Our first location in New York's vibrant culinary scene quickly gained recognition for its bold flavors and impeccable service. Within two years, we earned our first Michelin star, a testament to our team's relentless pursuit of excellence.</p>
+                        <p>Today, TASTNEST stands as a three-Michelin-starred establishment, ranked among the World's 50 Best Restaurants. Yet we remain true to our founding principles: respect for ingredients, mastery of technique, and creating unforgettable moments for our guests.</p>
+                        <div class="signature">Marco Vincenzo & Elena Petrov</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Milestones Section -->
+    <section class="milestones">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Our Milestones</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Key moments in our journey to culinary excellence</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2010</div>
+                        <h3 class="milestone-title">Grand Opening</h3>
+                        <p>TASTNEST opens its doors in Manhattan with a team of 15 passionate culinary professionals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2012</div>
+                        <h3 class="milestone-title">First Michelin Star</h3>
+                        <p>Earned our first Michelin star just two years after opening, a rare achievement in the culinary world.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2015</div>
+                        <h3 class="milestone-title">Second Star</h3>
+                        <p>Awarded our second Michelin star and named "Best New Restaurant" by James Beard Foundation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2018</div>
+                        <h3 class="milestone-title">Global Recognition</h3>
+                        <p>Ranked #23 on the World's 50 Best Restaurants list, our first appearance on the prestigious ranking.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2020</div>
+                        <h3 class="milestone-title">Third Michelin Star</h3>
+                        <p>Achieved the ultimate culinary honor with our third Michelin star, placing us among the world's elite.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="milestone-card">
+                        <div class="milestone-year">2023</div>
+                        <h3 class="milestone-title">World's Best</h3>
+                        <p>Named #8 on the World's 50 Best Restaurants list, our highest achievement to date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chef Team Section -->
+    <section class="chef-team">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Meet Our Culinary Artists</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">The passionate team behind TASTNEST's extraordinary dining experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="chef-card">
+                        <img src="./image/john deo.jpg" alt="Chef Marco Vincenzo" class="chef-img">
+                        <div class="chef-info">
+                            <h3 class="chef-name">Marco Vincenzo</h3>
+                            <span class="chef-title">Executive Chef & Founder</span>
+                            <p>With 25 years of experience in Michelin-starred kitchens across Europe and Asia, Chef Marco brings unparalleled expertise and creativity to every dish.</p>
+                            <div class="chef-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="chef-card">
+                        <img src="./image/Professional chef workplace at cuisine of restaurant close up view of man hand stirring soup _ Premium AI-generated image.jpeg" alt="Chef Sophia Chen" class="chef-img">
+                        <div class="chef-info">
+                            <h3 class="chef-name">john Chen</h3>
+                            <span class="chef-title">Head Pastry Chef</span>
+                            <p>Formerly of Paris's legendary Pâtisserie du Rêve, Chef john's desserts are works of art that balance precision with whimsical creativity.</p>
+                            <div class="chef-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="chef-card">
+                        <img src="./image/Jane Smith.jpg" alt="Chef Antoine Moreau" class="chef-img">
+                        <div class="chef-info">
+                            <h3 class="chef-name">Antoine Moreau</h3>
+                            <span class="chef-title">Master Sommelier</span>
+                            <p>One of only 269 Master Sommeliers worldwide, Antoine curates our 1,200-bottle wine cellar and creates perfect pairings for each dish.</p>
+                            <div class="chef-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Our Culinary Philosophy</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">The principles that guide every dish we create</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Seasonal Ingredients</h3>
+                        <p>We build relationships with local farmers and global producers to source only the finest seasonal ingredients at their peak.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Respect for Tradition</h3>
+                        <p>While innovative, our cuisine remains rooted in classical techniques perfected through years of dedication and practice.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Artistic Presentation</h3>
+                        <p>Each plate is a canvas where flavors, textures, and colors come together to create edible masterpieces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-about">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">Industry Recognition</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">What culinary experts say about TASTNEST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"TASTNEST represents the pinnacle of modern gastronomy. Chef Marco's ability to balance innovation with respect for ingredients is unparalleled. This is dining as high art."</p>
+                        <div class="guest-info">
+                            <h5>Michelin Guide</h5>
+                            <p>2023 Three-Star Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"From the moment you enter TASTNEST, you're transported to a world where every detail matters. The service is flawless, the wine pairings inspired, and the food simply transcendent."</p>
+                        <div class="guest-info">
+                            <h5>World's 50 Best Restaurants</h5>
+                            <p>Judges' Comments 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST is a world-renowned fine dining establishment dedicated to culinary excellence, innovative techniques, and unforgettable dining experiences.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Gourmet Avenue<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for exclusive updates, special events, and seasonal menu announcements.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        // Fix: Back to top button scrolls to top
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu close on click
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => { bsCollapse.hide(); })
+        });
+    </script>
+</body>
+</html>

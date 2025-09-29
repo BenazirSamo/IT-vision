@@ -1,0 +1,370 @@
+{
+  "regularMeals": [
+    {
+      "name": "Achar Gosht",
+      "description": "Tender mutton cooked with pickling spices, ginger, and garlic in a rich gravy.",
+      "price": "$12.99",
+      "image": "./image/regular Shinwari tawa chicken.jpeg"
+    },
+    {
+      "name": "Alu Matar",
+      "description": "Hearty potatoes and green peas cooked in aromatic spices and tomato-based gravy.",
+      "price": "$8.99",
+      "image": "./image/regular Alu Matar.jpg"
+    },
+    {
+      "name": "Chapati",
+      "description": "Traditional whole wheat flatbread, freshly made and perfect with any curry.",
+      "price": "$1.50 (per piece)",
+      "image": "./image/regular Chapati.jpg"
+    },
+    {
+      "name": "Chicken Manchurian",
+      "description": "Crispy chicken tossed in sweet, spicy, and tangy sauce with bell peppers.",
+      "price": "$11.99",
+      "image": "image/chicken manchorian .jpg"
+    },
+    {
+      "name": "Chicken Biryani",
+      "description": "Fragrant basmati rice layered with spiced chicken and caramelized onions.",
+      "price": "$14.99",
+      "image": "image/regular Biryani.jpeg"
+    },
+    {
+      "name": "Paratha",
+      "description": "Flaky, buttery layered flatbread, served with yogurt or pickles.",
+      "price": "$2.50 (per piece)",
+      "image": "image/regular paratha.jpg"
+    },
+    {
+      "name": "Russian Salad",
+      "description": "Colorful mix of potatoes, carrots, peas, and mayonnaise dressing.",
+      "price": "$6.99",
+      "image": "image/Russian Salaad.jpg"
+    },
+    {
+      "name": "Chilli Mushroom",
+      "description": "Crispy mushrooms tossed in garlic, soy sauce, and chili with bell peppers.",
+      "price": "$10.99",
+      "image": "image/regular chilli mushroom.jpg"
+    },
+    {
+      "name": "Dal Makhani",
+      "description": "Creamy black lentils slow-cooked with butter and aromatic spices.",
+      "price": "$9.99",
+      "image": "./image/regular Dal Makhni_ A creamy, buttery classic packed with rich Indian flavors!.jpeg"
+    },
+    {
+      "name": "Palak Paneer",
+      "description": "Fresh spinach curry with soft cottage cheese cubes and mild spices.",
+      "price": "$10.99",
+      "image": "./image/regular Palak Paneer (Saag Paneer).jpeg"
+    },
+    {
+      "name": "Butter Chicken",
+      "description": "Tandoori chicken in rich tomato and butter gravy with cream.",
+      "price": "$16.99",
+      "image": "image/Royal Butter Chicken.jpeg"
+    },
+    {
+      "name": "Garlic Naan",
+      "description": "Soft leavened bread baked in tandoor with fresh garlic and butter.",
+      "price": "$3.00 (per piece)",
+      "image": "./image/regular Buttery Garlic Naan Bread Recipe_ Delicious & Easy.jpeg"
+    }
+  ],
+  "signaturePlatters": [
+    {
+      "name": "Royal Biryani Platter",
+      "description": "A true feast fit for royalty! Fragrant basmati rice, slow-cooked to perfection with a rich blend of traditional spices, layered with tender meat, flavorful chicken, and juicy kebabs. Served with refreshing raita, crisp salad, and tangy chutney to elevate every bite. This platter is the perfect choice for sharing with family and friends, bringing a touch of royalty to your dining experience.",
+      "price": "$49.99",
+      "image": "./image/Pinterest.jpeg"
+    },
+    {
+      "name": "Tandoori Feast",
+      "description": "A sizzling spread straight from the clay oven! Succulent chicken tikka, smoky seekh kebabs, tender malai boti, and juicy fish tikka, all marinated in aromatic spices and grilled to perfection. Served hot with naan, mint chutney, fresh salad, and raita, this platter is a celebration of bold flavors and irresistible tandoori aromas. Perfect for sharing and making every meal unforgettable.",
+      "price": "$50.99",
+      "image": "./image/download (9).jpeg"
+    },
+    {
+      "name": "Vegetarian Delight",
+      "description": "A wholesome feast crafted for veggie lovers! A vibrant selection of flavorful vegetable biryani, crispy pakoras, paneer tikka, and aromatic mixed vegetable curry, served alongside fresh salad, mint chutney, and raita. This platter is a perfect balance of taste, health, and tradition — making it a delightful choice for a truly satisfying vegetarian experience.",
+      "price": "$40.99",
+      "image": "image/download (10).jpeg"
+    }
+  ],
+  "specialOffers": [
+    {
+      "name": "Family Feast Deal",
+      "description": "Perfect for family gatherings! Includes 2 appetizers, 3 main courses, rice, naan, and dessert for 4 people.",
+      "price": "$49.99",
+      "originalPrice": "$65.99"
+    },
+    {
+      "name": "Date Night Special",
+      "description": "Romantic dinner for two with wine pairing. Includes appetizers, main courses, and a shared dessert.",
+      "price": "$59.99",
+      "originalPrice": "$79.99"
+    },
+    {
+      "name": "Lunch Combo",
+      "description": "Quick and delicious lunch option. Choose any 2 items from our lunch menu with rice and drink.",
+      "price": "$15.99",
+      "originalPrice": "$21.99"
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Grilled Steak & Fries",
+      "description": "Juicy grilled beef steak served with crispy golden fries and sautéed onions.",
+      "price": "$25",
+      "image": "./image/lunch 1.jpg"
+    },
+    {
+      "name": "Chicken Parmesan",
+      "description": "Crispy breaded chicken topped with marinara sauce and melted mozzarella.",
+      "price": "$22",
+      "image": "./image/lunch 2.jpg"
+    },
+    {
+      "name": "Cheesy Lasagna",
+      "description": "Layers of pasta, rich meat sauce, and melted cheese baked to perfection.",
+      "price": "$20",
+      "image": "image/lunch 3.jpg"
+    },
+    {
+      "name": "Skewers Platter",
+      "description": "Tender chicken skewers served with rice, grilled veggies, and creamy dip.",
+      "price": "$29",
+      "image": "image/lunch 4.jpg"
+    },
+    {
+      "name": "Cheese Burst Pizza",
+      "description": "Crispy crust loaded with cheese, herbs, and delicious toppings.",
+      "price": "$18",
+      "image": "image/lunch 5.jpg"
+    },
+    {
+      "name": "Stuffed Wraps",
+      "description": "Soft flatbread rolls filled with spicy potato filling and drizzled with sauce.",
+      "price": "$16",
+      "image": "./image/lunch 6.jpg"
+    },
+    {
+      "name": "Crispy Chicken Strips",
+      "description": "Golden-fried chicken tenders served with fries and creamy garlic dip.",
+      "price": "$19",
+      "image": "./image/lunch 7.jpg"
+    },
+    {
+      "name": "Baked Pasta Shells",
+      "description": "Cheesy pasta shells stuffed with seasoned meat and baked in tomato sauce.",
+      "price": "$21",
+      "image": "./image/lunch 8.jpg"
+    },
+    {
+      "name": "Beef Burger",
+      "description": "Towering beef burger with cheese, lettuce, tomato, and special sauce.",
+      "price": "$17",
+      "image": "./image/lunch burger.jpeg"
+    },
+    {
+      "name": "Vegetable Stir Fry",
+      "description": "Fresh seasonal vegetables stir-fried in a savory garlic sauce.",
+      "price": "$15",
+      "image": "./image/lunch eeee Delicious Veggie Lo Mein Recipe _ Easy Stir-Fried Noodles with Vegetables (1).jpeg"
+    },
+    {
+      "name": "Fish Tacos",
+      "description": "Crispy fish fillets in soft tortillas with cabbage slaw and lime crema.",
+      "price": "$20",
+      "image": "./image/lunch eeee Delicious Veggie Lo Mein Recipe _ Easy Stir-Fried Noodles with Vegetables (2).jpeg"
+    },
+    {
+      "name": "Mushroom Risotto",
+      "description": "Creamy arborio rice with wild mushrooms and parmesan cheese.",
+      "price": "$22",
+      "image": "image/lunch eeee Delicious Veggie Lo Mein Recipe _ Easy Stir-Fried Noodles with Vegetables (3).jpeg"
+    }
+  ],
+  "dessert": [
+    {
+      "name": "Chocolate Lava Cake",
+      "description": "Warm chocolate cake with a molten center, served with vanilla ice cream.",
+      "price": "$12",
+      "image": "./image/dessert 1.jpeg"
+    },
+    {
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone.",
+      "price": "$10",
+      "image": "./image/dessert2.jpeg"
+    },
+    {
+      "name": "Red Velvet Cake",
+      "description": "Moist red velvet layers with cream cheese frosting and berry compote.",
+      "price": "$14",
+      "image": "image/dessert  3.jpeg"
+    },
+    {
+      "name": "Crème Brûlée",
+      "description": "Rich custard topped with a layer of hardened caramelized sugar.",
+      "price": "$11",
+      "image": "./image/dessert cart 1 (4).jpeg"
+    },
+    {
+      "name": "New York Cheesecake",
+      "description": "Creamy cheesecake with graham cracker crust and berry topping.",
+      "price": "$13",
+      "image": "./image/deessert 5.jpeg"
+    },
+    {
+      "name": "Fresh Fruit Tart",
+      "description": "Buttery pastry crust filled with custard and topped with seasonal fruits.",
+      "price": "$12",
+      "image": "./image/dessert 6.jpeg"
+    },
+    {
+      "name": "French Macarons",
+      "description": "Assortment of delicate almond meringue cookies with various fillings.",
+      "price": "$15 (6 pieces)",
+      "image": "./image/dessert 7.jpeg"
+    },
+    {
+      "name": "Dark Chocolate Mousse",
+      "description": "Silky smooth chocolate mousse topped with whipped cream and shavings.",
+      "price": "$10",
+      "image": "./image/dessert  (8).jpeg"
+    },
+    {
+      "name": "Vanilla Panna Cotta",
+      "description": "Italian cooked cream dessert with berry coulis and mint garnish.",
+      "price": "$11",
+      "image": "./image/vanila pana conda.jpeg"
+    },
+    {
+      "name": "Classic Apple Pie",
+      "description": "Flaky crust filled with cinnamon-spiced apples, served warm with ice cream.",
+      "price": "$12",
+      "image": "./image/dessert 10"
+    },
+    {
+      "name": "Chocolate Fondant",
+      "description": "Decadent chocolate dessert with a warm, gooey center and fresh berries.",
+      "price": "$14",
+      "image": "./image/dessert 11.jpeg"
+    },
+    {
+      "name": "Zesty Lemon Tart",
+      "description": "Tangy lemon curd in a sweet shortcrust pastry, dusted with powdered sugar.",
+      "price": "$11",
+      "image": "./image/dessert 12.jpeg"
+    }
+  ],
+  "beverages": {
+    "mocktails": [
+      {
+        "name": "Berry Bliss",
+        "description": "Mixed berry puree with fresh lime juice, mint, and sparkling water topped with seasonal berries.",
+        "price": "$8.99",
+        "image": "./image/1.jpeg"
+      },
+      {
+        "name": "Tropical Sunset",
+        "description": "Pineapple, mango, and orange juices layered with grenadine for a beautiful sunset effect.",
+        "price": "$7.99",
+        "image": "./image/2.jpeg"
+      },
+      {
+        "name": "Cucumber Cooler",
+        "description": "Fresh cucumber juice with mint, lime, and a touch of honey, served over crushed ice.",
+        "price": "$7.49",
+        "image": "./image/3.jpeg"
+      },
+      {
+        "name": "Spiced Lemonade",
+        "description": "House-made lemonade with ginger, cardamom, and a hint of black salt for a unique twist.",
+        "price": "$6.99",
+        "image": "./image/4.jpeg"
+      }
+    ],
+    "juices": [
+      {
+        "name": "Sunrise Splash",
+        "description": "Freshly squeezed orange, carrot, and ginger juice - packed with vitamins and energy.",
+        "price": "$6.99",
+        "image": "./image/5.jpeg"
+      },
+      {
+        "name": "Green Detox",
+        "description": "Kale, spinach, apple, celery, and lemon juice - your daily dose of greens.",
+        "price": "$7.49",
+        "image": "./image/6.jpeg"
+      },
+      {
+        "name": "Watermelon Mint",
+        "description": "Fresh watermelon juice with mint leaves - incredibly refreshing on hot days.",
+        "price": "$6.49",
+        "image": "./image/7.jpeg"
+      },
+      {
+        "name": "Beetroot Boost",
+        "description": "Beetroot, apple, and lemon juice - naturally sweet and full of antioxidants.",
+        "price": "$7.99",
+        "image": "./image/8.jpeg"
+      }
+    ],
+    "specialty": [
+      {
+        "name": "Mango Lassi",
+        "description": "Creamy yogurt blended with sweet mango pulp and a touch of cardamom.",
+        "price": "$5.99",
+        "image": "./image/9.jpeg"
+      },
+      {
+        "name": "Rose Milk",
+        "description": "Chilled milk infused with rose syrup and topped with pistachios - a floral delight.",
+        "price": "$5.49",
+        "image": "./image/10.jpeg"
+      },
+      {
+        "name": "Saffron Sharbat",
+        "description": "Premium saffron infused in rose water with honey and lime - a royal drink.",
+        "price": "$8.99",
+        "image": "./image/11.jpeg"
+      },
+      {
+        "name": "Kokum Cooler",
+        "description": "Traditional kokum fruit drink with cumin and mint - tangy and refreshing.",
+        "price": "$6.99",
+        "image": "./image/12.jpeg"
+      }
+    ],
+    "hot_beverages": [
+      {
+        "name": "Masala Chai",
+        "description": "Traditional Indian tea brewed with ginger, cardamom, cinnamon, and black pepper.",
+        "price": "$4.99",
+        "image": "./image/13"
+      },
+      {
+        "name": "Kashmiri Kahwa",
+        "description": "Green tea with saffron, cinnamon, cardamom, and crushed almonds.",
+        "price": "$6.99",
+        "image": "./image/14.jpeg"
+      },
+      {
+        "name": "Luxury Hot Chocolate",
+        "description": "Rich Belgian chocolate melted in steamed milk with vanilla bean and whipped cream.",
+        "price": "$6.49",
+        "image": "./image/15.jpeg"
+      },
+      {
+        "name": "Golden Turmeric Latte",
+        "description": "Warm almond milk with turmeric, cinnamon, ginger, and a pinch of black pepper.",
+        "price": "$5.99",
+        "image": "./image/16.jpeg"
+      }
+    ]
+  }
+}

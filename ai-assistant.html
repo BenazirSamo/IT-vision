@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASTNEST AI Assistant - Get instant answers about our restaurant, menu, reservations, and more">
+    <meta name="keywords" content="TASTNEST, restaurant AI, food assistant, reservation help, menu questions">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <title>AI Assistant | TASTNEST Restaurant</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" as="style">
+    
+    <!-- Bootstrap CSS -->
+   <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            color: #1a1a1a;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: #e30613;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .dropdown-item:hover {
+            background-color: #e30613;
+            color: white;
+        }
+        
+        /* AI Hero Section */
+        .ai-hero {
+            margin-top: 100px;
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/for%20home%202.jpeg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .ai-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .ai-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Chat Container */
+        .chat-container {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #e30613;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .chat-window {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: #e30613;
+            color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chat-avatar {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .chat-avatar i {
+            font-size: 2rem;
+            color: #e30613;
+        }
+        
+        .chat-header-info h3 {
+            margin: 0;
+            color: white;
+        }
+        
+        .chat-header-info p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 25px;
+            background: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 25px;
+            display: flex;
+        }
+        
+        .bot-message {
+            justify-content: flex-start;
+        }
+        
+        .user-message {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 18px;
+            position: relative;
+        }
+        
+        .bot-message .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .user-message .message-content {
+            background: #e30613;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 0.75rem;
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+        
+        .chat-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .chat-send-btn {
+            background: #e30613;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-send-btn:hover {
+            background: #c10510;
+            transform: scale(1.05);
+        }
+        
+        /* Suggestions */
+        .suggestions {
+            padding: 40px 0;
+            background: #f9f9f9;
+        }
+        
+        .suggestion {
+            display: inline-block;
+            background: white;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+        
+        .suggestion:hover {
+            background: #e30613;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(227, 6, 19, 0.3);
+        }
+        
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            width: fit-content;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .typing-indicator span {
+            margin-left: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                background: #ccc;
+            }
+            30% {
+                transform: translateY(-5px);
+                background: #e30613;
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .footer-logo span {
+            color: #e30613;
+        }
+        
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+        
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #e30613;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .ai-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar-collapse {
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .ai-hero {
+                padding: 80px 0;
+            }
+            
+            .ai-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .ai-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .chat-header {
+                padding: 20px;
+            }
+            
+            .chat-avatar {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .chat-messages {
+                height: 350px;
+                padding: 20px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .ai-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .suggestion {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Hero Section -->
+    <section class="ai-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="fade-up">TASTNEST AI Assistant</h1>
+                    <p data-aos="fade-up" data-aos-delay="200">Your personal culinary guide, available 24/7 to answer questions, make recommendations, and enhance your dining experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Container -->
+    <section class="chat-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 data-aos="fade-up">How Can I Help You Today?</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Ask me anything about our menu, reservations, dietary options, or culinary experiences</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-window" data-aos="fade-up">
+                <div class="chat-header">
+                    <div class="chat-avatar">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="chat-header-info">
+                        <h3>TASTNEST Assistant</h3>
+                        <p><span class="status-indicator"></span> Online - Ready to assist you</p>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>Hello! I'm TASTNEST's AI assistant. How can I help you with your dining experience today?</p>
+                            <div class="message-time" id="current-time"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="user-input" placeholder="Ask me anything about TASTNEST...">
+                    <button class="chat-send-btn" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <div class="suggestions">
+                    <div class="suggestion" data-question="What are your operating hours?">What are your operating hours?</div>
+                    <div class="suggestion" data-question="Do you have vegetarian options?">Do you have vegetarian options?</div>
+                    <div class="suggestion" data-question="How do I make a reservation?">How do I make a reservation?</div>
+                    <div class="suggestion" data-question="What is your signature dish?">What is your signature dish?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST is a world-renowned fine dining establishment dedicated to culinary excellence, innovative techniques, and unforgettable dining experiences.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Gourmet Avenue<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for exclusive updates, special events, and seasonal menu announcements.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <!-- Bootstrap JS -->
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener('click', function() {
+                if (menuToggle.classList.contains('show')) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // AI Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+            const suggestions = document.querySelectorAll('.suggestion');
+            
+            // Set current time for initial message
+            const now = new Date();
+            const timeString = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+            document.getElementById('current-time').textContent = timeString;
+            
+            // Predefined responses
+            const responses = {
+                "What are your operating hours?": "We are open Tuesday through Saturday from 5:30 PM to 10:30 PM. On Sundays, we are open from 5:00 PM to 9:00 PM. We are closed on Mondays. Special holiday hours may apply.",
+                "Do you have vegetarian options?": "Absolutely! We offer several vegetarian options on our menu, including our popular Wild Mushroom Risotto and Roasted Vegetable Platter. Our chefs can also customize dishes to accommodate vegetarian preferences.",
+                "How do I make a reservation?": "You can make a reservation through our website, by calling us at +1 (212) 555-7878, or by using our online reservation system. We recommend booking at least 2-3 weeks in advance for weekend dining.",
+                "What is your signature dish?": "Our most celebrated dish is the Truffle-Infused Wagyu Beef - A5 Japanese Wagyu beef aged for 28 days and slow-cooked to perfection, infused with black truffle essence from Piedmont.",
+                "Do you offer gluten-free options?": "Yes, we have several gluten-free options available. Our menu indicates which dishes are gluten-free, and our chefs can often modify other dishes to accommodate gluten-free needs. Please inform your server of any dietary restrictions.",
+                "What is the dress code?": "We maintain an elegant atmosphere and recommend business casual or formal attire. We kindly request no beachwear, athletic wear, or flip-flops. Jackets are preferred for gentlemen but not required.",
+                "Do you have a kids menu?": "While we don't have a dedicated kids menu, our chefs are happy to prepare smaller portions of any dish or create simple alternatives for younger guests.",
+                "Is there parking available?": "Valet parking is available for $25 per vehicle. There are also several public parking garages within a 2-block radius of our restaurant.",
+                "Do you offer gift certificates?": "Yes, we offer gift certificates in various denominations. They can be purchased in-person, over the phone, or through our website.",
+                "What payment methods do you accept?": "We accept all major credit cards, debit cards, and cash. We also accept Apple Pay and Google Pay for your convenience.",
+                "Do you cater events?": "Yes, we offer catering services for private events. Please contact our events coordinator at events@tastnest.com or call +1 (212) 555-7879 for more information.",
+                "Can you accommodate large groups?": "We can accommodate groups of up to 20 people in our private dining room. For groups larger than 8, we require a pre-fixed menu and a deposit to secure the reservation.",
+                "Do you have a wine list?": "Yes, we have an extensive wine list featuring over 300 selections from around the world. Our sommelier would be delighted to help you choose the perfect pairing for your meal.",
+                "What is your cancellation policy?": "For regular reservations, we request at least 2 hours notice for cancellations. For parties of 6 or more, we require 24 hours notice to avoid a $25 per person cancellation fee.",
+                "Are you hiring?": "We're always looking for talented individuals to join our team. Please visit our careers page or email your resume to careers@tastnest.com.",
+                "default": "I'm not sure how to answer that. Please try asking about our menu, reservations, hours, or other restaurant services. How else can I assist you today?"
+            };
+            
+            // Function to add a message to the chat
+            function addMessage(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
+
+                const messageContent = document.createElement('div');
+                messageContent.className = 'message-content';
+
+                const messageText = document.createElement('p');
+                messageText.textContent = message;
+
+                const messageTime = document.createElement('div');
+                messageTime.className = 'message-time';
+
+                const now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12 || 12;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                messageTime.textContent = hours + ':' + minutes + ' ' + ampm;
+
+                messageContent.appendChild(messageText);
+                messageContent.appendChild(messageTime);
+                messageDiv.appendChild(messageContent);
+
+                chatMessages.appendChild(messageDiv);
+
+                // Scroll to the bottom of the chat
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Function to show typing indicator
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message bot-message';
+                typingDiv.id = 'typing-indicator';
+                
+                const typingContent = document.createElement('div');
+                typingContent.className = 'typing-indicator';
+                
+                for (let i = 0; i < 3; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'typing-dot';
+                    typingContent.appendChild(dot);
+                }
+                
+                const typingText = document.createElement('span');
+                typingText.textContent = 'TASTNEST Assistant is typing...';
+                typingContent.appendChild(typingText);
+                
+                typingDiv.appendChild(typingContent);
+                chatMessages.appendChild(typingDiv);
+                
+                // Scroll to the bottom of the chat
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return typingDiv;
+            }
+            
+            // Function to process user input and generate response
+            function processInput(input) {
+                // Convert input to lowercase for easier matching
+                const lowerInput = input.toLowerCase();
+                
+                // Check for matches in our responses
+                for (const [key, value] of Object.entries(responses)) {
+                    if (lowerInput.includes(key.toLowerCase())) {
+                        return value;
+                    }
+                }
+                
+                // Check for common greetings
+                if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+                    return "Hello! Welcome to TASTNEST. How can I assist you with your dining experience today?";
+                }
+                
+                if (lowerInput.includes('thank')) {
+                    return "You're welcome! Is there anything else I can help you with?";
+                }
+                
+                if (lowerInput.includes('menu') || lowerInput.includes('dish') || lowerInput.includes('food')) {
+                    return "Our menu features contemporary cuisine with global influences. We source the finest ingredients from local farms and international producers. You can view our full menu on our website. Is there a specific type of cuisine or dietary requirement you're interested in?";
+                }
+                
+                if (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('expensive')) {
+                    return "Our prix fixe menu is $125 per person, with tasting menus starting at $185. À la carte options are also available. We believe our pricing reflects the quality of ingredients and the culinary experience we provide.";
+                }
+                
+                if (lowerInput.includes('vegan') || lowerInput.includes('plant-based')) {
+                    return "We offer several vegan options that can be prepared upon request. Our chefs are skilled at creating beautiful plant-based dishes that maintain our culinary standards. Please inform us of any dietary preferences when making your reservation.";
+                }
+                
+                if (lowerInput.includes('allerg') || lowerInput.includes('nut') || lowerInput.includes('dairy')) {
+                    return "We take food allergies very seriously. Please inform your server of any allergies, and our chefs will prepare your meal with appropriate precautions. We can accommodate most common allergies including nuts, dairy, gluten, and shellfish.";
+                }
+                
+                // Default response if no matches found
+                return responses["default"];
+            }
+            
+            // Function to handle sending a message
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message !== '') {
+                    addMessage(message, true);
+                    userInput.value = '';
+                    const typingIndicator = showTypingIndicator();
+                    setTimeout(() => {
+                        if (typingIndicator && typingIndicator.parentNode) {
+                            typingIndicator.parentNode.removeChild(typingIndicator);
+                        }
+                    
+                        const response = processInput(message);
+                        addMessage(response, false);
+                    }, 1500);
+                }
+            }
+            
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            suggestions.forEach(suggestion => {
+                suggestion.addEventListener('click', function() {
+                    const question = this.getAttribute('data-question');
+                    userInput.value = question;
+                    sendMessage();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

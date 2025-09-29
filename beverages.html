@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASTNEST - Premium beverages menu featuring signature drinks, mocktails, and artisanal beverages">
+    <meta name="keywords" content="beverages, drinks, mocktails, juices, TASTNEST, premium drinks">
+    <meta name="author" content="TASTNEST Culinary Team">
+    <meta property="og:title" content="TASTNEST - Premium Beverage Selection">
+    <meta property="og:description" content="Explore our exquisite beverage menu featuring signature drinks and refreshing mocktails">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tastnest.com/beverages">
+    <title>TASTNEST | Premium Beverage Menu | Signature Drinks & Refreshing Mocktails</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            background-color: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #e30613;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a ;
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #e30613 ;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .navbar-nav .dropdown-menu {
+            min-width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: none;
+            margin-top: 10px;
+            background: #fff;
+            padding: 0.5rem 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar-nav .dropdown-item {
+            padding: 10px 24px;
+            color: #1a1a1a;
+            font-weight: 500;
+            border-radius: 6px;
+            background: none ;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .navbar-nav .dropdown-item:hover,
+        .navbar-nav .dropdown-item:focus {
+            background: #e30613 ;
+            color: #fff ;
+        }
+        
+        .navbar-nav .dropdown-menu.show {
+            display: block;
+            animation: fadeInDown 0.25s;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-nav .dropdown-menu {
+                min-width: 100%;
+                left: 0;
+                right: 0;
+                box-shadow: none;
+                border-radius: 0 0 10px 10px;
+            }
+            .navbar-nav .dropdown-item {
+                padding: 12px 24px;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #e30613;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .beverage-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #e30613;
+        }
+        
+        .beverage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .beverage-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .beverage-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .beverage-card h4 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+            color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .beverage-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #e30613;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .beverage-card-body {
+            padding: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #e30613 0%, #d4af37 100%);
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .footer-logo span {
+            color: #e30613;
+        }
+
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: #e30613;
+            transform: translateY(-5px);
+        }
+
+        .footer-links h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #e30613;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #e30613;
+            transform: translateX(5px);
+        }
+
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-contact li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            color: #e30613;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-form button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .footer-bottom a {
+            color: #e30613;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #d4af37;
+        }
+
+        /* Add this to your <style> section in beverages.html for footer fonts */
+        .footer-logo h2,
+        .footer-links h3,
+        .footer-contact h3,
+        .footer-newsletter h3,
+        .footer-bottom p {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .footer-links a,
+        .footer-contact li,
+        .footer-about p,
+        .footer-newsletter p,
+        .footer-bottom a {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .footer {
+                padding: 80px 0 30px;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./image/Screenshot 2025-08-09 231514.png" alt="TASTNEST Logo" class="logo-img">
+                <span>TASTNEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mealsDropdown">
+                            <li><a class="dropdown-item" href="regular.html">Regular</a></li>
+                            <li><a class="dropdown-item" href="lunch.html">Lunch</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">Dessert</a></li>
+                            <li><a class="dropdown-item active" href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe-of-month.html">Recipe of Month</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Beverage Categories -->
+    <div class="container py-5">
+        <!-- Mocktails Section -->
+        <div class="section-header" id="mocktails">
+            <h2>Signature Mocktails</h2>
+        </div>
+        <div class="row" id="mocktails-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Juices Section -->
+        <div class="section-header" id="juices">
+            <h2>Fresh Juices</h2>
+        </div>
+        <div class="row" id="juices-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Specialty Drinks Section -->
+        <div class="section-header" id="specialty">
+            <h2>Specialty Drinks</h2>
+        </div>
+        <div class="row" id="specialty-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Hot Beverages Section -->
+        <div class="section-header" id="hot-beverages">
+            <h2>Hot Beverages</h2>
+        </div>
+        <div class="row" id="hot-beverages-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="image/Screenshot 2025-08-09 231514.png" alt="TASTNEST White Logo">
+                            <h2>TAST<span>NEST</span></h2>
+                        </div>
+                        <p>TASTNEST is a world-renowned fine dining establishment dedicated to culinary excellence, innovative techniques, and unforgettable dining experiences.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="regular.html">Regular Menu</a></li>
+                            <li><a href="lunch.html">Lunch Specials</a></li>
+                            <li><a href="dessert.html">Desserts</a></li>
+                            <li><a href="beverages.html">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Gourmet Avenue<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (212) 555-7878</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>reservations@tastnest.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Sat: 11:30AM - 10:30PM<br>Sun: 11:30AM - 9:00PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for exclusive updates, special events, and seasonal menu announcements.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 TASTNEST. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to create beverage card HTML
+        function createBeverageCard(item) {
+            return `
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <div class="beverage-card">
+                        <img src="${item.image}" class="img-fluid" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Image+Not+Found'">
+                        <div class="beverage-card-body">
+                            <h4>${item.name}</h4>
+                            <p>${item.description}</p>
+                            <p><strong class="price">${item.price}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to load beverage data
+        async function loadBeverageData() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                
+                // Render mocktails
+                const mocktailsContainer = document.getElementById('mocktails-container');
+                if (data.beverages && data.beverages.mocktails) {
+                    data.beverages.mocktails.forEach(item => {
+                        mocktailsContainer.innerHTML += createBeverageCard(item);
+                    });
+                } else {
+                    mocktailsContainer.innerHTML = '<div class="col-12 text-center"><p>No mocktails available at the moment.</p></div>';
+                }
+                
+                // Render juices
+                const juicesContainer = document.getElementById('juices-container');
+                if (data.beverages && data.beverages.juices) {
+                    data.beverages.juices.forEach(item => {
+                        juicesContainer.innerHTML += createBeverageCard(item);
+                    });
+                } else {
+                    juicesContainer.innerHTML = '<div class="col-12 text-center"><p>No juices available at the moment.</p></div>';
+                }
+                
+                // Render specialty drinks
+                const specialtyContainer = document.getElementById('specialty-container');
+                if (data.beverages && data.beverages.specialty) {
+                    data.beverages.specialty.forEach(item => {
+                        specialtyContainer.innerHTML += createBeverageCard(item);
+                    });
+                } else {
+                    specialtyContainer.innerHTML = '<div class="col-12 text-center"><p>No specialty drinks available at the moment.</p></div>';
+                }
+                
+                // Render hot beverages
+                const hotBeveragesContainer = document.getElementById('hot-beverages-container');
+                if (data.beverages && data.beverages.hot_beverages) {
+                    data.beverages.hot_beverages.forEach(item => {
+                        hotBeveragesContainer.innerHTML += createBeverageCard(item);
+                    });
+                } else {
+                    hotBeveragesContainer.innerHTML = '<div class="col-12 text-center"><p>No hot beverages available at the moment.</p></div>';
+                }
+                
+            } catch (error) {
+                console.error('Error loading beverage data:', error);
+                
+                const containers = [
+                    'mocktails-container',
+                    'juices-container',
+                    'specialty-container',
+                    'hot-beverages-container'
+                ];
+                
+                containers.forEach(containerId => {
+                    const container = document.getElementById(containerId);
+                    container.innerHTML = `
+                        <div class="col-12 text-center">
+                            <p>Failed to load beverages. Please try again later.</p>
+                            <button class="btn btn-primary mt-2" onclick="loadBeverageData()">Retry</button>
+                        </div>
+                    `;
+                });
+            }
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu close on click
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => { bsCollapse.hide(); })
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert('Thank you for subscribing with ' + email);
+                this.reset();
+            });
+        }
+        
+        // Load beverage data when page loads
+        document.addEventListener('DOMContentLoaded', loadBeverageData);
+    </script>
+</body>
+</html>
