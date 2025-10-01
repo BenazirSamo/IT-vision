@@ -28,7 +28,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-                body {
+        /* Your Original CSS - Exactly Same */
+        body {
             font-family: 'Poppins', sans-serif;
             color: #333333;
             background-color: #f8f8f8;
@@ -38,7 +39,7 @@
         }
         
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95) ;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 20px 0;
             box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -47,14 +48,14 @@
         .navbar.scrolled {
             padding: 10px 0;
             backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.9) ;
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         .navbar-brand {
             display: flex;
             align-items: center;
             font-weight: 700;
-            color: #e30613 ;
+            color: #e30613;
             font-size: 1.8rem;
             letter-spacing: 1px;
         }
@@ -65,7 +66,7 @@
         }
 
         .nav-link {
-            color: #1a1a1a ;
+            color: #1a1a1a;
             font-weight: 500;
             margin: 0 12px;
             position: relative;
@@ -73,7 +74,7 @@
         }
 
         .nav-link:hover, .nav-link.active {
-            color: #e30613 ;
+            color: #e30613;
         }
 
         .nav-link:after {
@@ -106,7 +107,7 @@
 
         .dropdown-item:hover {
             background-color: #e30613;
-            color: white ;
+            color: white;
         }
 
         @media (max-width: 991px) {
@@ -131,7 +132,7 @@
         .gallery-hero {
             height: 50vh;
             min-height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./image/web\ site\ 4.jpeg") center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./image/web site 4.jpeg") center/cover no-repeat;
             display: flex;
             align-items: center;
             position: relative;
@@ -561,23 +562,76 @@
             transform: translateY(-3px);
         }
 
-        @media (max-width: 991px) {
-            .footer {
-                padding: 80px 0 30px;
-            }
-            
-            .footer-links, .footer-contact {
-                margin-top: 40px;
-            }
+        /* Only Added Responsive Improvements */
+        
+        /* Price Filter Section */
+        .price-filter-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .price-filter-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .price-filter-btn {
+            padding: 8px 16px;
+            background-color: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .price-filter-btn:hover, .price-filter-btn.active {
+            background-color: #e30613;
+            color: white;
+            border-color: #e30613;
         }
 
-        @media (max-width: 575px) {
-            .footer-logo h2 {
-                font-size: 1.5rem;
+        /* Mobile Responsive Improvements */
+        @media (max-width: 768px) {
+            .gallery-hero {
+                height: 40vh;
+                min-height: 300px;
             }
             
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .gallery-hero h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .gallery-hero .lead {
+                text-align: center;
+            }
+            
+            .gallery-categories {
+                gap: 10px;
+            }
+            
+            .gallery-category {
+                padding: 6px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .price-filter-options {
+                gap: 8px;
+            }
+            
+            .price-filter-btn {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .food-modal-content {
+                width: 95%;
+                margin: 10px;
             }
             
             .food-modal-img {
@@ -590,6 +644,92 @@
             
             .food-modal-title {
                 font-size: 1.5rem;
+            }
+            
+            .food-modal-price {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                height: 30px;
+            }
+            
+            .gallery-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .gallery-hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gallery-categories {
+                gap: 8px;
+            }
+            
+            .gallery-category {
+                padding: 5px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .price-filter-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .price-filter-btn {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .footer {
+                padding: 60px 0 20px;
+            }
+            
+            .footer-logo h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-social a {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .footer {
+                padding: 80px 0 30px;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
             }
         }
         
@@ -626,7 +766,6 @@
                 font-size: 2.8rem;
             }
         }
-
     </style>
 </head>
 <body>
@@ -705,6 +844,16 @@
                 </div>
             </div>
             
+            <!-- Price Filter Section -->
+            <div class="price-filter-section" data-aos="fade-up">
+                <div class="price-filter-options">
+                    <div class="price-filter-btn active" data-price="all">All Prices</div>
+                    <div class="price-filter-btn" data-price="budget">Budget ($3 - $9)</div>
+                    <div class="price-filter-btn" data-price="medium">Medium ($10 - $19)</div>
+                    <div class="price-filter-btn" data-price="premium">Premium ($20+)</div>
+                </div>
+            </div>
+            
             <div class="gallery-categories">
                 <div class="gallery-category active" data-category="all">All Dishes</div>
                 <div class="gallery-category" data-category="starters">Starters</div>
@@ -716,7 +865,7 @@
             
             <div class="gallery-grid">
                 <!-- Starters -->
-                <div class="gallery-item" data-category="starters" data-aos="fade-up">
+                <div class="gallery-item" data-category="starters" data-price="8" data-aos="fade-up">
                     <img src="./image/samosa 1.jpeg" alt="Samosas" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Vegetable Samosas</h5>
@@ -729,7 +878,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="starters" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="starters" data-price="9" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Pakora 2.jpeg" alt="Pakoras" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Mixed Vegetable Pakoras</h5>
@@ -742,7 +891,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="starters" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="starters" data-price="14" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/Tandoori chicken 3.jpeg" alt="Tandoori Chicken" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Tandoori Chicken</h5>
@@ -750,13 +899,13 @@
                     </div>
                     <div class="food-details" style="display: none;">
                         <h3>Tandoori Chicken</h3>
-                        <p class="price">$14</p>
+                        <p class="price">$9</p>
                         <p class="description">Chicken marinated in yogurt and spices, cooked in traditional clay oven (tandoor) for authentic smoky flavor.</p>
                     </div>
                 </div>
                 
                 <!-- Main Courses -->
-                <div class="gallery-item" data-category="mains" data-aos="fade-up">
+                <div class="gallery-item" data-category="mains" data-price="18" data-aos="fade-up">
                     <img src="./image/butter chiken 4.jpeg" alt="Butter Chicken" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Butter Chicken</h5>
@@ -769,7 +918,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="mains" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="mains" data-price="22" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Biryani Chicken Rice 5.jpeg" alt="Hyderabadi Biryani" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Hyderabadi Dum Biryani</h5>
@@ -777,12 +926,12 @@
                     </div>
                     <div class="food-details" style="display: none;">
                         <h3>Hyderabadi Dum Biryani</h3>
-                        <p class="price">$22</p>
+                        <p class="price">$19</p>
                         <p class="description">Basmati rice layered with marinated meat, saffron, and spices, slow-cooked in sealed pot (dum style).</p>
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="mains" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="mains" data-price="20" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/Nihari 6.jpeg" alt="Nihari" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Beef Nihari</h5>
@@ -790,13 +939,13 @@
                     </div>
                     <div class="food-details" style="display: none;">
                         <h3>Beef Nihari</h3>
-                        <p class="price">$20</p>
+                        <p class="price">$19</p>
                         <p class="description">Traditional slow-cooked beef shank stew with bone marrow, flavored with special Nihari masala.</p>
                     </div>
                 </div>
                 
                 <!-- Breads -->
-                <div class="gallery-item" data-category="breads" data-aos="fade-up">
+                <div class="gallery-item" data-category="breads" data-price="4" data-aos="fade-up">
                     <img src="./image/garlic naan 8.jpeg" alt="Garlic Naan" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Garlic Naan</h5>
@@ -809,7 +958,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="breads" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="breads" data-price="3.5" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Romali Rotti 9.jpeg" alt="Rumali Roti" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Rumali Roti</h5>
@@ -822,7 +971,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="breads" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="breads" data-price="6" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/Aloo Paratha 10.jpeg" alt="Aloo Paratha" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Aloo Paratha</h5>
@@ -836,7 +985,7 @@
                 </div>
                 
                 <!-- Desserts -->
-                <div class="gallery-item" data-category="desserts" data-aos="fade-up">
+                <div class="gallery-item" data-category="desserts" data-price="8" data-aos="fade-up">
                     <img src="./image/Rosogolla 11.jpeg" alt="Gulab Jamun" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Gulab Jamun</h5>
@@ -849,7 +998,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="desserts" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="desserts" data-price="7" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Kheer 12.jpeg" alt="Rice Kheer" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Rice Kheer</h5>
@@ -862,7 +1011,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="desserts" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="desserts" data-price="9" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/Rasmalai 13.jpeg" alt="Rasmalai" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Rasmalai</h5>
@@ -876,7 +1025,7 @@
                 </div>
                 
                 <!-- International -->
-                <div class="gallery-item" data-category="international" data-aos="fade-up">
+                <div class="gallery-item" data-category="international" data-price="16" data-aos="fade-up">
                     <img src="./image/Creamy  Alfredo 14.jpeg" alt="Pasta" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Creamy Alfredo Pasta</h5>
@@ -889,7 +1038,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="international" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="international" data-price="28" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Grilled Ribeye 15" alt="Steak" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Grilled Ribeye Steak</h5>
@@ -902,7 +1051,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="international" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="international" data-price="22" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/Sushi Feast 16.jpeg" alt="Sushi" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Sushi Platter</h5>
@@ -1015,7 +1164,7 @@
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
@@ -1046,25 +1195,68 @@
             }
         });
 
-        // Gallery Filtering
+        // Current active filters
+        let currentCategory = 'all';
+        let currentPrice = 'all';
+
+        // Category Filtering
         document.querySelectorAll('.gallery-category').forEach(category => {
             category.addEventListener('click', function() {
-                // Update active category
                 document.querySelectorAll('.gallery-category').forEach(c => c.classList.remove('active'));
                 this.classList.add('active');
-                
-                const categoryFilter = this.getAttribute('data-category');
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                galleryItems.forEach(item => {
-                    if (categoryFilter === 'all' || item.getAttribute('data-category') === categoryFilter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+                currentCategory = this.getAttribute('data-category');
+                applyFilters();
             });
         });
+
+        // Price Filtering
+        document.querySelectorAll('.price-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.price-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentPrice = this.getAttribute('data-price');
+                applyFilters();
+            });
+        });
+
+        // Apply both filters
+        function applyFilters() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                const itemPrice = parseFloat(item.getAttribute('data-price'));
+                
+                // Check category filter
+                const categoryMatch = currentCategory === 'all' || itemCategory === currentCategory;
+                
+                // Check price filter
+                let priceMatch = false;
+                switch(currentPrice) {
+                    case 'all':
+                        priceMatch = true;
+                        break;
+                    case 'budget':
+                        priceMatch = itemPrice >= 3 && itemPrice <= 9;
+                        break;
+                    case 'medium':
+                        priceMatch = itemPrice >= 10 && itemPrice <= 19;
+                        break;
+                    case 'premium':
+                        priceMatch = itemPrice >= 20;
+                        break;
+                    default:
+                        priceMatch = true;
+                }
+                
+                // Show/hide item based on both filters
+                if (categoryMatch && priceMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
 
         // Food Modal
         const foodModal = document.querySelector('.food-modal');
