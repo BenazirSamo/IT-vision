@@ -844,16 +844,16 @@
                 </div>
             </div>
             
-            <!-- Price Filter Section -->
-            <div class="price-filter-section" data-aos="fade-up">
-                <div class="price-filter-options">
-                    <div class="price-filter-btn active" data-price="all">All Prices</div>
-                    <div class="price-filter-btn" data-price="budget">Budget ($3 - $9)</div>
-                    <div class="price-filter-btn" data-price="medium">Medium ($10 - $19)</div>
-                    <div class="price-filter-btn" data-price="premium">Premium ($20+)</div>
-                </div>
-            </div>
-            
+          <!-- Price Filter Section -->
+<div class="price-filter-section" data-aos="fade-up">
+    <label for="priceFilter" style="font-weight: 600; margin-right: 10px;">Filter by Price:</label>
+    <select id="priceFilter" class="form-select d-inline-block" style="width: 220px; display: inline-block;">
+        <option value="all">All Prices</option>
+        <option value="budget">Budget ($3 - $9)</option>
+        <option value="medium">Medium ($10 - $19)</option>
+        <option value="premium">Premium ($20+)</option>
+    </select>
+</div>
             <div class="gallery-categories">
                 <div class="gallery-category active" data-category="all">All Dishes</div>
                 <div class="gallery-category" data-category="starters">Starters</div>
@@ -864,7 +864,7 @@
             </div>
             
             <div class="gallery-grid">
-                <!-- Starters -->
+                <!-- Starters - Budget -->
                 <div class="gallery-item" data-category="starters" data-price="8" data-aos="fade-up">
                     <img src="./image/samosa 1.jpeg" alt="Samosas" class="gallery-img">
                     <div class="gallery-caption">
@@ -891,21 +891,208 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="starters" data-price="14" data-aos="fade-up" data-aos-delay="200">
-                    <img src="./image/Tandoori chicken 3.jpeg" alt="Tandoori Chicken" class="gallery-img">
+                <div class="gallery-item" data-category="starters" data-price="7" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/gellery 1.jpg" alt="Chicken Tikka" class="gallery-img">
                     <div class="gallery-caption">
-                        <h5>Tandoori Chicken</h5>
-                        <p>Classic clay oven roasted chicken</p>
+                        <h5>Chicken Tikka</h5>
+                        <p>Boneless chicken marinated in spices</p>
                     </div>
                     <div class="food-details" style="display: none;">
-                        <h3>Tandoori Chicken</h3>
-                        <p class="price">$9</p>
-                        <p class="description">Chicken marinated in yogurt and spices, cooked in traditional clay oven (tandoor) for authentic smoky flavor.</p>
+                        <h3>Chicken Tikka</h3>
+                        <p class="price">$7</p>
+                        <p class="description">Boneless chicken pieces marinated in yogurt and spices, grilled to perfection.</p>
+                    </div>
+                </div>
+
+                <!-- Starters - Medium  -->
+                <div class="gallery-item" data-category="starters" data-price="12" data-aos="fade-up">
+                    <img src="./image/gellery 2.jpg" alt="Paneer Tikka" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Paneer Tikka</h5>
+                        <p>Grilled cottage cheese with spices</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Paneer Tikka</h3>
+                        <p class="price">$12</p>
+                        <p class="description">Cubes of paneer marinated in spices and grilled in tandoor.</p>
                     </div>
                 </div>
                 
-                <!-- Main Courses -->
-                <div class="gallery-item" data-category="mains" data-price="18" data-aos="fade-up">
+<div class="gallery-item" data-category="starters" data-price="15" data-aos="fade-up" data-aos-delay="250">
+    <img src="./image/chicken_malai_boti.jpg" alt="Chicken Malai Boti" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Chicken Malai Boti</h5>
+        <p>Creamy grilled chicken cubes</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Chicken Malai Boti</h3>
+        <p class="price">$15</p>
+        <p class="description">Soft chicken chunks marinated with cream and mild spices, grilled to juicy perfection.</p>
+    </div>
+</div>
+
+               
+<div class="gallery-item" data-category="starters" data-price="14" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/fish_amritsari.jpg" alt="Fish Amritsari" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Fish Amritsari</h5>
+        <p>Crispy fried spiced fish</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Fish Amritsari</h3>
+        <p class="price">$14</p>
+        <p class="description">Boneless fish marinated in gram flour and Punjabi spices, deep fried until golden and served with mint chutney.</p>
+    </div>
+</div>
+
+                
+                <!-- Starters - Premium-->
+                <div class="gallery-item" data-category="starters" data-price="22" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Tandoori chicken 3.jpeg" alt="Tandoori Prawns" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Tandoori Prawns</h5>
+                        <p>Jumbo prawns in tandoori marinade</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Tandoori Prawns</h3>
+                        <p class="price">$22</p>
+                        <p class="description">Jumbo prawns marinated in traditional tandoori spices and grilled to perfection.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="starters" data-price="24" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/gellery 1.jpg" alt="Lamb Seekh Kebabs" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Lamb Seekh Kebabs</h5>
+                        <p>Minced lamb skewers with herbs</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Lamb Seekh Kebabs</h3>
+                        <p class="price">$24</p>
+                        <p class="description">Minced lamb mixed with herbs and spices, shaped around skewers and grilled.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="starters" data-price="26" data-aos="fade-up">
+                    <img src="./image/Chicken Malai Tikka" alt="Chicken Malai Tikka" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Chicken Malai Tikka</h5>
+                        <p>Creamy marinated chicken pieces</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Chicken Malai Tikka</h3>
+                        <p class="price">$26</p>
+                        <p class="description">Boneless chicken marinated in cream, cheese and mild spices, grilled to perfection.</p>
+                    </div>
+                </div>
+                
+                <!-- Mains - Budget -->
+                <div class="gallery-item" data-category="mains" data-price="8" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Chana Masala.jpg" alt="Chana Masala" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Chana Masala</h5>
+                        <p>Chickpeas in spicy tomato gravy</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Chana Masala</h3>
+                        <p class="price">$8</p>
+                        <p class="description">Chickpeas cooked in a flavorful blend of tomatoes, onions and aromatic spices.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="mains" data-price="9" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Dal Tadka.jpg" alt="Dal Tadka" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Dal Tadka</h5>
+                        <p>Lentils tempered with spices</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Dal Tadka</h3>
+                        <p class="price">$9</p>
+                        <p class="description">Yellow lentils cooked with spices and finished with a tempering of ghee, cumin and garlic.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="mains" data-price="7" data-aos="fade-up">
+                    <img src="./image/Aloo Gobi.jpg" alt="Aloo Gobi" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Aloo Gobi</h5>
+                        <p>Potato and cauliflower curry</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Aloo Gobi</h3>
+                        <p class="price">$7</p>
+                        <p class="description">A dry curry made with potatoes, cauliflower and Indian spices.</p>
+                    </div>
+                </div>
+                <!-- Mains - Medium -->
+                <div class="gallery-item" data-category="mains" data-price="15" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/gellery 3.jpg" alt="Lamb Rogan Josh" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Lamb Rogan Josh</h5>
+                        <p>Kashmiri red lamb curry</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Lamb Rogan Josh</h3>
+                        <p class="price">$15</p>
+                        <p class="description">Tender lamb cooked in aromatic red gravy with Kashmiri spices.</p>
+                    </div>
+                </div>
+               
+<div class="gallery-item" data-category="mains" data-price="12" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/paneer_butter_masala.jpg" alt="Paneer Butter Masala" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Paneer Butter Masala</h5>
+        <p>Cottage cheese in rich tomato gravy</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Paneer Butter Masala</h3>
+        <p class="price">$12</p>
+        <p class="description">Soft cubes of paneer simmered in a creamy tomato and butter sauce with mild Indian spices.</p>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="mains" data-price="18" data-aos="fade-up" data-aos-delay="300">
+    <img src="./image/mutton_korma.jpg" alt="Mutton Korma" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Mutton Korma</h5>
+        <p>Royal-style mutton curry</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Mutton Korma</h3>
+        <p class="price">$18</p>
+        <p class="description">Tender mutton slow-cooked in aromatic yogurt-based gravy with traditional Mughlai spices.</p>
+    </div>
+</div>
+
+                
+                <!-- Mains - Premium -->
+
+<div class="gallery-item" data-category="mains" data-price="25" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/lobster_curry.jpg" alt="Lobster Curry" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Lobster Curry</h5>
+        <p>Deluxe seafood curry</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Lobster Curry</h3>
+        <p class="price">$25</p>
+        <p class="description">Succulent lobster tails cooked in coconut-based curry with South Indian spices.</p>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="mains" data-price="22" data-aos="fade-up" data-aos-delay="300">
+    <img src="./image/goat_biryani.jpg" alt="Goat Biryani" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Goat Biryani</h5>
+        <p>Layered rice and goat meat</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Goat Biryani</h3>
+        <p class="price">$22</p>
+        <p class="description">Fragrant basmati rice layered with marinated goat meat and spices, slow-cooked for perfect flavor.</p>
+    </div>
+</div>
+
+                <div class="gallery-item" data-category="mains" data-price="18" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/butter chiken 4.jpeg" alt="Butter Chicken" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Butter Chicken</h5>
@@ -918,7 +1105,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="mains" data-price="22" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="mains" data-price="22" data-aos="fade-up">
                     <img src="./image/Biryani Chicken Rice 5.jpeg" alt="Hyderabadi Biryani" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Hyderabadi Dum Biryani</h5>
@@ -926,12 +1113,12 @@
                     </div>
                     <div class="food-details" style="display: none;">
                         <h3>Hyderabadi Dum Biryani</h3>
-                        <p class="price">$19</p>
+                        <p class="price">$22</p>
                         <p class="description">Basmati rice layered with marinated meat, saffron, and spices, slow-cooked in sealed pot (dum style).</p>
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="mains" data-price="20" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="mains" data-price="20" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Nihari 6.jpeg" alt="Nihari" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Beef Nihari</h5>
@@ -939,13 +1126,13 @@
                     </div>
                     <div class="food-details" style="display: none;">
                         <h3>Beef Nihari</h3>
-                        <p class="price">$19</p>
+                        <p class="price">$20</p>
                         <p class="description">Traditional slow-cooked beef shank stew with bone marrow, flavored with special Nihari masala.</p>
                     </div>
                 </div>
                 
-                <!-- Breads -->
-                <div class="gallery-item" data-category="breads" data-price="4" data-aos="fade-up">
+                <!-- Breads - Budget -->
+                <div class="gallery-item" data-category="breads" data-price="4" data-aos="fade-up" data-aos-delay="200">
                     <img src="./image/garlic naan 8.jpeg" alt="Garlic Naan" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Garlic Naan</h5>
@@ -958,7 +1145,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="breads" data-price="3.5" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="breads" data-price="3.5" data-aos="fade-up">
                     <img src="./image/Romali Rotti 9.jpeg" alt="Rumali Roti" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Rumali Roti</h5>
@@ -971,7 +1158,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item" data-category="breads" data-price="6" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="breads" data-price="6" data-aos="fade-up" data-aos-delay="100">
                     <img src="./image/Aloo Paratha 10.jpeg" alt="Aloo Paratha" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Aloo Paratha</h5>
@@ -983,8 +1170,112 @@
                         <p class="description">Whole wheat flatbread stuffed with spiced mashed potatoes, cooked on griddle with ghee.</p>
                     </div>
                 </div>
+
+                <!-- Breads - Medium -->
+                <div class="gallery-item" data-category="breads" data-price="12" data-aos="fade-up">
+                    <img src="./image/keema naan.jpg" alt="Keema Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Keema Naan</h5>
+                        <p>Naan stuffed with minced meat</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Keema Naan</h3>
+                        <p class="price">$12</p>
+                        <p class="description">Soft naan bread stuffed with spiced minced meat and baked in tandoor.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="breads" data-price="11" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Paneer Kulcha.jpg" alt="Paneer Kulcha" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Paneer Kulcha</h5>
+                        <p>Leavened bread with paneer stuffing</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Paneer Kulcha</h3>
+                        <p class="price">$11</p>
+                        <p class="description">Soft leavened bread stuffed with spiced paneer and baked in tandoor.</p>
+                    </div>
+                </div>
                 
-                <!-- Desserts -->
+                <div class="gallery-item" data-category="breads" data-price="10" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Cheese Naan.jpg" alt="Cheese Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Cheese Naan</h5>
+                        <p>Naan with melted cheese</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Cheese Naan</h3>
+                        <p class="price">$10</p>
+                        <p class="description">Soft naan stuffed with cheese and baked in tandoor until golden and bubbly.</p>
+                    </div>
+                </div>
+                
+                <!-- Breads - Premium  -->
+                <div class="gallery-item" data-category="breads" data-price="18" data-aos="fade-up">
+                    <img src="./image/Truffle Naan.jpg" alt="Truffle Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Truffle Naan</h5>
+                        <p>Naan with truffle oil and mushrooms</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Truffle Naan</h3>
+                        <p class="price">$18</p>
+                        <p class="description">Premium naan infused with truffle oil and topped with wild mushrooms.</p>
+                    </div>
+                </div>
+               
+<div class="gallery-item" data-category="breads" data-price="21" data-aos="fade-up" data-aos-delay="250">
+    <img src="./image/cheese_stuffed_naan.jpg" alt="Cheese Stuffed Naan" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Cheese Stuffed Naan</h5>
+        <p>Soft naan filled with mozzarella</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Cheese Stuffed Naan</h3>
+        <p class="price">$21</p>
+        <p class="description">Fluffy tandoori naan stuffed with melted mozzarella cheese and brushed with garlic butter.</p>
+    </div>
+</div>
+
+                <div class="gallery-item" data-category="breads" data-price="16" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/download (5).jpg" alt="Saffron Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Saffron Naan</h5>
+                        <p>Naan infused with saffron</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Saffron Naan</h3>
+                        <p class="price">$16</p>
+                        <p class="description">Premium naan dough infused with saffron and topped with nuts.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="breads" data-price="20" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/naan.jpg" alt="Caviar Naan" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Caviar Naan</h5>
+                        <p>Naan with caviar and gold leaf</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Caviar Naan</h3>
+                        <p class="price">$20</p>
+                        <p class="description">Luxury naan topped with premium caviar and edible gold leaf.</p>
+                    </div>
+                </div>
+               
+<div class="gallery-item" data-category="breads" data-price="22" data-aos="fade-up" data-aos-delay="300">
+    <img src="./image/gold_butter_naan.jpg" alt="Gold Butter Naan" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Gold Butter Naan</h5>
+        <p>Luxurious naan with gold leaf</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Gold Butter Naan</h3>
+        <p class="price">$22</p>
+        <p class="description">Soft, buttery naan topped with edible gold leaf — a luxurious accompaniment to royal curries.</p>
+    </div>
+</div>              
+                <!-- Desserts - Budget  -->
                 <div class="gallery-item" data-category="desserts" data-price="8" data-aos="fade-up">
                     <img src="./image/Rosogolla 11.jpeg" alt="Gulab Jamun" class="gallery-img">
                     <div class="gallery-caption">
@@ -1023,10 +1314,130 @@
                         <p class="description">Soft paneer dumplings in thickened, sweetened milk flavored with cardamom and saffron.</p>
                     </div>
                 </div>
+
+                <!-- Desserts - Medium  -->
+                <div class="gallery-item" data-category="desserts" data-price="12" data-aos="fade-up">
+                    <img src="./image/kulfi.jpg" alt="Kulfi" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Kulfi</h5>
+                        <p>Traditional Indian ice cream</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Kulfi</h3>
+                        <p class="price">$12</p>
+                        <p class="description">Rich, creamy frozen dessert made with reduced milk, nuts and cardamom.</p>
+                    </div>
+                </div>
                 
-                <!-- International -->
+                <div class="gallery-item" data-category="desserts" data-price="14" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/gajar halwa.jpg" alt="Gajar Ka Halwa" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Gajar Ka Halwa</h5>
+                        <p>Carrot pudding with nuts</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Gajar Ka Halwa</h3>
+                        <p class="price">$14</p>
+                        <p class="description">Traditional dessert made with grated carrots, milk, sugar and dry fruits.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="desserts" data-price="16" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Bread Malai Roll.jpg" alt="Shahi Tukda" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Shahi Tukda</h5>
+                        <p>Royal bread pudding</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Shahi Tukda</h3>
+                        <p class="price">$16</p>
+                        <p class="description">Fried bread pieces soaked in sweetened milk, garnished with nuts and saffron.</p>
+                    </div>
+                </div>
+                
+                <!-- Desserts - Premium -->
+                <div class="gallery-item" data-category="desserts" data-price="22" data-aos="fade-up">
+                    <img src="./image/Saffron Phirni" alt="Saffron Phirni" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Saffron Phirni</h5>
+                        <p>Ground rice pudding with saffron</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Saffron Phirni</h3>
+                        <p class="price">$22</p>
+                        <p class="description">Premium ground rice pudding infused with saffron and served in clay pots.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="desserts" data-price="24" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Gold Leaf Rasmalai.jpg" alt="Gold Leaf Rasmalai" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Gold Leaf Rasmalai</h5>
+                        <p>Rasmalai with edible gold</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Gold Leaf Rasmalai</h3>
+                        <p class="price">$24</p>
+                        <p class="description">Premium rasmalai garnished with edible gold leaf and rare nuts.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="desserts" data-price="26" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Truffle Kulfi.jpg" alt="Truffle Kulfi" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Truffle Kulfi</h5>
+                        <p>Kulfi with white truffle</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Truffle Kulfi</h3>
+                        <p class="price">$26</p>
+                        <p class="description">Luxury kulfi infused with white truffle and garnished with gold dust.</p>
+                    </div>
+                </div>
+                
+                <!-- International - Budget -->
+                <div class="gallery-item" data-category="international" data-price="8" data-aos="fade-up">
+                    <img src="./image/Margherita Pizza.jpg" alt="Margherita Pizza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Margherita Pizza</h5>
+                        <p>Classic Italian pizza</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Margherita Pizza</h3>
+                        <p class="price">$8</p>
+                        <p class="description">Traditional pizza with tomato sauce, mozzarella cheese and fresh basil.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="international" data-price="9" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Caesar Salad.jpg" alt="Caesar Salad" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Caesar Salad</h5>
+                        <p>Romaine lettuce with dressing</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Caesar Salad</h3>
+                        <p class="price">$9</p>
+                        <p class="description">Fresh romaine lettuce with Caesar dressing, croutons and parmesan cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="international" data-price="7" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./image/Pasta Aglio Olio.jpg" alt="Pasta Aglio Olio" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h5>Pasta Aglio Olio</h5>
+                        <p>Garlic and olive oil pasta</p>
+                    </div>
+                    <div class="food-details" style="display: none;">
+                        <h3>Pasta Aglio Olio</h3>
+                        <p class="price">$7</p>
+                        <p class="description">Simple pasta dish with garlic, olive oil, chili flakes and parsley.</p>
+                    </div>
+                </div>
+                
+                <!-- International - Medium  -->
                 <div class="gallery-item" data-category="international" data-price="16" data-aos="fade-up">
-                    <img src="./image/Creamy  Alfredo 14.jpeg" alt="Pasta" class="gallery-img">
+                    <img src="./image/Creamy  Alfredo 14.jpeg" alt="Creamy Alfredo Pasta" class="gallery-img">
                     <div class="gallery-caption">
                         <h5>Creamy Alfredo Pasta</h5>
                         <p>Italian classic with our twist</p>
@@ -1036,37 +1447,98 @@
                         <p class="price">$16</p>
                         <p class="description">Fettuccine pasta in rich Parmesan cream sauce with garlic and herbs.</p>
                     </div>
-                </div>
-                
-                <div class="gallery-item" data-category="international" data-price="28" data-aos="fade-up" data-aos-delay="100">
-                    <img src="./image/Grilled Ribeye 15" alt="Steak" class="gallery-img">
+                </div>  
+<div class="gallery-item" data-category="international" data-price="17" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/Chicken Lasagna.jpg" alt="Chicken Lasagna" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Chicken Lasagna</h5>
+        <p>Layered pasta with creamy sauce</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Chicken Lasagna</h3>
+        <p class="price">$17</p>
+        <p class="description">Classic Italian lasagna layered with minced chicken, béchamel sauce, and melted cheese.</p>
+    </div>
+</div>
+                <div class="gallery-item" data-category="international" data-price="18" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./image/Gourmet Beef Burger.jpg" alt="Beef Burger" class="gallery-img">
                     <div class="gallery-caption">
-                        <h5>Grilled Ribeye Steak</h5>
-                        <p>With desi masala rub</p>
+                        <h5>Gourmet Beef Burger</h5>
+                        <p>Premium beef with special sauce</p>
                     </div>
                     <div class="food-details" style="display: none;">
-                        <h3>Grilled Ribeye Steak</h3>
-                        <p class="price">$28</p>
-                        <p class="description">Premium ribeye steak with our special Indian spice rub, served with roasted vegetables.</p>
+                        <h3>Gourmet Beef Burger</h3>
+                        <p class="price">$18</p>
+                        <p class="description">Premium beef patty with special sauce, cheese, lettuce and tomato on brioche bun.</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="international" data-price="22" data-aos="fade-up" data-aos-delay="200">
-                    <img src="./image/Sushi Feast 16.jpeg" alt="Sushi" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h5>Sushi Platter</h5>
-                        <p>Japanese delicacies</p>
-                    </div>
-                    <div class="food-details" style="display: none;">
-                        <h3>Sushi Platter</h3>
-                        <p class="price">$22</p>
-                        <p class="description">Assorted nigiri and maki rolls with wasabi, pickled ginger and soy sauce.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          <!-- International - Premium  -->
+<div class="gallery-item" data-category="international" data-price="28" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/Grilled Ribeye 15" alt="Grilled Ribeye Steak" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Grilled Ribeye Steak</h5>
+        <p>With desi masala rub</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Grilled Ribeye Steak</h3>
+        <p class="price">$28</p>
+        <p class="description">Premium ribeye steak with our special Indian spice rub, served with roasted vegetables.</p>
+    </div>
+</div>
+<div class="gallery-item" data-category="international" data-price="24" data-aos="fade-up" data-aos-delay="300">
+    <img src="./image/Lobster Thermidor.jpg" alt="Lobster Thermidor" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Lobster Thermidor</h5>
+        <p>Classic French lobster dish</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Lobster Thermidor</h3>
+        <p class="price">$24</p>
+        <p class="description">Succulent lobster meat baked in a creamy mustard sauce and topped with melted cheese.</p>
+    </div>
+</div>
 
+<div class="gallery-item" data-category="international" data-price="26" data-aos="fade-up" data-aos-delay="400">
+    <img src="./image/Smoked Salmon Steak" alt="Smoked Salmon Steak" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Smoked Salmon Steak</h5>
+        <p>Premium salmon grilled to perfection</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Smoked Salmon Steak</h3>
+        <p class="price">$26</p>
+        <p class="description">Fresh Atlantic salmon smoked and grilled, served with herbed butter and vegetables.</p>
+    </div>
+</div>
+<!-- Chocolate Lava Cake -->
+<div class="gallery-item" data-category="desserts" data-price="12" data-aos="fade-up" data-aos-delay="200">
+    <img src="./image/chocolate_lava_cake.jpg" alt="Chocolate Lava Cake" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Chocolate Lava Cake</h5>
+        <p>Molten chocolate dessert</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Chocolate Lava Cake</h3>
+        <p class="price">$12</p>
+        <p class="description">Soft chocolate cake with a gooey molten center, served warm with vanilla ice cream.</p>
+    </div>
+</div>
+
+<!-- Strawberry Milkshake -->
+<div class="gallery-item" data-category="beverages" data-price="9" data-aos="fade-up" data-aos-delay="300">
+    <img src="./image/strawberry_milkshake.jpg" alt="Strawberry Milkshake" class="gallery-img">
+    <div class="gallery-caption">
+        <h5>Strawberry Milkshake</h5>
+        <p>Refreshing chilled drink</p>
+    </div>
+    <div class="food-details" style="display: none;">
+        <h3>Strawberry Milkshake</h3>
+        <p class="price">$9</p>
+        <p class="description">Creamy, fruity milkshake made with fresh strawberries and vanilla ice cream.</p>
+    </div>
+</div>
+</div> 
+    </section>
     <!-- Food Detail Modal -->
     <div class="food-modal">
         <div class="food-modal-close">
@@ -1208,57 +1680,52 @@
                 applyFilters();
             });
         });
+// Price Filtering
+const priceDropdown = document.getElementById('priceFilter');
 
-        // Price Filtering
-        document.querySelectorAll('.price-filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.price-filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentPrice = this.getAttribute('data-price');
-                applyFilters();
-            });
-        });
+priceDropdown.addEventListener('change', function() {
+    currentPrice = this.value;
+    applyFilters();
+});
 
-        // Apply both filters
-        function applyFilters() {
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            galleryItems.forEach(item => {
-                const itemCategory = item.getAttribute('data-category');
-                const itemPrice = parseFloat(item.getAttribute('data-price'));
-                
-                // Check category filter
-                const categoryMatch = currentCategory === 'all' || itemCategory === currentCategory;
-                
-                // Check price filter
-                let priceMatch = false;
-                switch(currentPrice) {
-                    case 'all':
-                        priceMatch = true;
-                        break;
-                    case 'budget':
-                        priceMatch = itemPrice >= 3 && itemPrice <= 9;
-                        break;
-                    case 'medium':
-                        priceMatch = itemPrice >= 10 && itemPrice <= 19;
-                        break;
-                    case 'premium':
-                        priceMatch = itemPrice >= 20;
-                        break;
-                    default:
-                        priceMatch = true;
-                }
-                
-                // Show/hide item based on both filters
-                if (categoryMatch && priceMatch) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+
+       // Apply both filters 
+function applyFilters() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let matchingItems = [];
+
+    galleryItems.forEach(item => {
+        item.style.display = 'none';
+    });
+    galleryItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const itemPrice = parseFloat(item.getAttribute('data-price'));
+        const categoryMatch = currentCategory === 'all' || itemCategory === currentCategory;
+        let priceMatch = false;
+        switch (currentPrice) {
+            case 'all':
+                priceMatch = true;
+                break;
+            case 'budget':
+                priceMatch = itemPrice >= 3 && itemPrice <= 9;
+                break;
+            case 'medium':
+                priceMatch = itemPrice >= 10 && itemPrice <= 19;
+                break;
+            case 'premium':
+                priceMatch = itemPrice >= 20;
+                break;
         }
-
-        // Food Modal
+        if (categoryMatch && priceMatch) {
+            matchingItems.push(item);
+        }
+    });
+    if (currentCategory === 'all' && currentPrice === 'all') {
+        matchingItems.forEach(item => item.style.display = 'block');
+    } else {
+        matchingItems.slice(0, 3).forEach(item => item.style.display = 'block');
+    }
+}
         const foodModal = document.querySelector('.food-modal');
         const modalClose = document.querySelector('.food-modal-close');
         const galleryItems = document.querySelectorAll('.gallery-item');
